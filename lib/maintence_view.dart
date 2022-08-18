@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'activy/main_page.dart';
 
 
+// Vai Configurar minhas Activy de acordo com o dispositivo
 class MaintenceView extends StatefulWidget {
   const MaintenceView({Key? key}) : super(key: key);
 

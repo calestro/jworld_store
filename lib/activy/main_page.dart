@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/components/app_bar_logo.dart';
 
 
+
+//Minha View Principal
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -15,15 +18,25 @@ class _MainPageState extends State<MainPage> {
     double hg = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Column(
-        children: [
-          //Logo e painel de login
-          //search bar
-          //menu
+      appBar: AppBar(
+        elevation: 0,
+        //title: Image.asset("img/logo"),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
+      body: Container(
+        width: wd,
+        height: hg,
+        child: Column(
+          children: [
+            AppBarSearch(),
+            //search bar
+            //menu
 
 
-          //conteudo
-        ],
+            //conteudo
+          ],
+        ),
       ),
     );
   }
