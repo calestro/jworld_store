@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/components/app_bar_logo.dart';
+import 'package:mobile_j_world/activy/components/app_bar_search.dart';
+import 'package:mobile_j_world/activy/components/category_menu.dart';
 
 
 
@@ -29,9 +30,11 @@ class _MainPageState extends State<MainPage> {
         height: hg,
         child: Column(
           children: [
-            AppBarSearch(),
             //search bar
-            //menu
+            AppBarSearch(),
+
+            //menu category
+            CategoryMenu(),
 
 
             //conteudo

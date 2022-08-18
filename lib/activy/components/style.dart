@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Estilos do meu componente Search Bar
+//Estilos do componente Search Bar
 class SearchBarStyle {
 
   // Input Decoration da Search TexField
