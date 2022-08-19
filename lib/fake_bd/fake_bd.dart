@@ -32,7 +32,7 @@ class FakeBd{
           "G":10,
         },
         [
-          "img/products/git.jpg",
+          "img/products/git.png",
           "img/products/git2.jpg",
         ]
         ),
@@ -47,7 +47,7 @@ class FakeBd{
           "G":10,
         },
         [
-          "img/products/git.jpg",
+          "img/products/git.png",
           "img/products/git2.jpg",
         ]
         ),
@@ -62,7 +62,7 @@ class FakeBd{
           "G":10,
         },
         [
-          "img/products/git.jpg",
+          "img/products/git.png",
           "img/products/git2.jpg",
         ]
     ),

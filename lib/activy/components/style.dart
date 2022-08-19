@@ -54,4 +54,18 @@ class MainAppStyle {
       )
   );
 
+  final BoxDecoration tileProducts = BoxDecoration(
+    color: Color(0xfff4e7e7).withOpacity(0.35),
+    borderRadius: BorderRadius.vertical(
+        top: Radius.elliptical(25, 25),
+        bottom: Radius.elliptical(25, 25)
+    ),
+    border: Border(
+      top:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
+      bottom:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
+      left:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
+      right:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
+    ),
+  );
+
 }

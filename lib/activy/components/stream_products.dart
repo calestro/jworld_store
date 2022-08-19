@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/components/style.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
@@ -9,19 +10,27 @@ class StreamProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
+    final double wd = MediaQuery.of(context).size.width;
+    int crossXGrid = wd.toInt();
     return GridView.builder(
       itemCount: bd.products.length,
+        scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 250,
+          mainAxisExtent: 250,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
         ),
       itemBuilder: (context,index){
           return Container(
-            height: 50,
+            margin: EdgeInsets.all(10),
+            decoration:MainAppStyle().tileProducts,
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children:[
                 //Image
-               Image.asset(bd.products[index].image[0], height: 100,),
+               Image.asset(bd.products[index].image[0],width: 120,),
                 //text
                 Text(bd.products[index].name),
 
