@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //Estilos do componente Search Bar
-class SearchBarStyle {
+class MainAppStyle {
 
   // Input Decoration da Search TexField
   final InputDecoration inputStyle = InputDecoration(
@@ -36,6 +36,22 @@ class SearchBarStyle {
     labelStyle: TextStyle(
       fontWeight: FontWeight.bold,
     ),
+  );
+
+  final BoxDecoration menuCategory = BoxDecoration(
+      color: Colors.red.withOpacity(0.1),
+      borderRadius: BorderRadius.only(
+        topLeft:Radius.circular(20) ,
+        topRight:Radius.circular(14),
+        bottomLeft:Radius.circular(14),
+        bottomRight:Radius.circular(20),
+      ),
+      border: Border(
+        top:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
+        left:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
+        right:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
+        bottom:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid,),
+      )
   );
 
 }

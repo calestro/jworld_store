@@ -24,7 +24,7 @@ class AppBarSearch extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
-              decoration: SearchBarStyle().inputStyle,
+              decoration: MainAppStyle().inputStyle,
             ),
           ),
         ],
