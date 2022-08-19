@@ -10,10 +10,10 @@ class AppBarSearch extends StatelessWidget {
     TextEditingController searchController = TextEditingController();
     return Container(
       color: Colors.red,
+      padding: EdgeInsets.only(top: 6),
       width: MediaQuery.of(context).size.width,
-      height: 80,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             width: MediaQuery.of(context).size.width * 0.8,
@@ -27,6 +27,7 @@ class AppBarSearch extends StatelessWidget {
               decoration: MainAppStyle().inputStyle,
             ),
           ),
+          Icon(Icons.shopping_cart_rounded, size: 40,)
         ],
       ),
     );

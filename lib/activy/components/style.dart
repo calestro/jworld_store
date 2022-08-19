@@ -39,7 +39,7 @@ class MainAppStyle {
   );
 
   final BoxDecoration menuCategory = BoxDecoration(
-      color: Colors.red.withOpacity(0.1),
+      color: Color(0xfff11111).withOpacity(0.8),
       borderRadius: BorderRadius.only(
         topLeft:Radius.circular(20) ,
         topRight:Radius.circular(14),
@@ -47,24 +47,24 @@ class MainAppStyle {
         bottomRight:Radius.circular(20),
       ),
       border: Border(
-        top:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
-        left:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
-        right:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid, ),
-        bottom:BorderSide(color: Colors.redAccent.withOpacity(0.7), width: 5, style: BorderStyle.solid,),
+        top:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        left:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        right:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        bottom:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid,),
       )
   );
 
   final BoxDecoration tileProducts = BoxDecoration(
-    color: Color(0xfff4e7e7).withOpacity(0.35),
+    color: Color(0xfff4e7e7).withOpacity(0.5),
     borderRadius: BorderRadius.vertical(
         top: Radius.elliptical(25, 25),
         bottom: Radius.elliptical(25, 25)
     ),
     border: Border(
-      top:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
-      bottom:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
-      left:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
-      right:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.1)),
+      top:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
+      bottom:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
+      left:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
+      right:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
     ),
   );
 

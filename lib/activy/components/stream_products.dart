@@ -15,6 +15,7 @@ class StreamProducts extends StatelessWidget {
     return GridView.builder(
       itemCount: bd.products.length,
         scrollDirection: Axis.vertical,
+        physics: ScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 250,
@@ -27,7 +28,6 @@ class StreamProducts extends StatelessWidget {
             margin: EdgeInsets.all(10),
             decoration:MainAppStyle().tileProducts,
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               children:[
                 //Image
                Image.asset(bd.products[index].image[0],width: 120,),
