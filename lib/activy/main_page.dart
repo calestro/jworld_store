@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/components/category_menu.dart';
+import 'package:mobile_j_world/activy/components/stream_products.dart';
 
 
 
@@ -38,6 +39,7 @@ class _MainPageState extends State<MainPage> {
 
 
             //conteudo
+            StreamProducts(),
           ],
         ),
       ),

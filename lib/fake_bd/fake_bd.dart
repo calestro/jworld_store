@@ -21,6 +21,7 @@ class FakeBd{
     CategoryBd("Cosplay", Icons.add),
   ];
   List<ProductsBd> products = [
+
     ProductsBd(
         "Camisa ",
         "Camisa Especial do GitHub - Feita de material 100% algodão",
@@ -31,11 +32,40 @@ class FakeBd{
           "G":10,
         },
         [
-          AssetImage("img/products/git.jpg"),
-          AssetImage("img/products/git2.jpg"),
-
+          "img/products/git.jpg",
+          "img/products/git2.jpg",
         ]
         ),
+
+    ProductsBd(
+        "Camisa ",
+        "Camisa Especial do GitHub - Feita de material 100% algodão",
+        28.8,
+        {
+          "M":10,
+          "P":10,
+          "G":10,
+        },
+        [
+          "img/products/git.jpg",
+          "img/products/git2.jpg",
+        ]
+        ),
+
+    ProductsBd(
+        "Camisa ",
+        "Camisa Especial do GitHub - Feita de material 100% algodão",
+        28.8,
+        {
+          "M":10,
+          "P":10,
+          "G":10,
+        },
+        [
+          "img/products/git.jpg",
+          "img/products/git2.jpg",
+        ]
+    ),
   ];
 
 
