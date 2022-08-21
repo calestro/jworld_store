@@ -1,12 +1,18 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/cart_page.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
+
+import '../../fake_bd/fake_bd.dart';
 
 // Barra do Search MainPage
 class AppBarSearch extends StatelessWidget {
-  const AppBarSearch({Key? key}) : super(key: key);
+
+  const AppBarSearch({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    FakeBd bd = FakeBd();
     TextEditingController searchController = TextEditingController();
     return Container(
       color: Colors.red,
@@ -27,10 +33,26 @@ class AppBarSearch extends StatelessWidget {
               decoration: MainAppStyle().inputStyle,
             ),
           ),
-          IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
+
+          Badge(
+            badgeContent: Text(bd.myCart.length.toString(), style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
+            position: const BadgePosition(start: 40, bottom: 30),
+            showBadge: bd.myCart.isEmpty ? false : true,
+            badgeColor: Colors.redAccent,
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CartPage()));
+              },
+              icon: const Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
+            ),
           ),
+          const SizedBox(
+            width: 20.0,
+          ),
+
         ],
       ),
     );

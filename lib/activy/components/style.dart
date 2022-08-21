@@ -75,6 +75,17 @@ class MainAppStyle {
     color: Colors.white,
   );
 
+  final TextStyle textProductName = TextStyle(
+    fontWeight: FontWeight.bold,
+  );
+final TextStyle textPrice = TextStyle(
+    fontWeight: FontWeight.bold,
+  );
 
+String priceConvert (double price) {
+  String stringPrice = price.toStringAsFixed(2);
+  stringPrice = "R\$ " + stringPrice.replaceAll(".", ",");
+  return stringPrice;
+}
 
 }

@@ -19,7 +19,6 @@ class _CartPageState extends State<CartPage> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          //AppBar
           //lista de produtos
           //bottom descrição
         ],

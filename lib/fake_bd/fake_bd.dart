@@ -110,6 +110,10 @@ class FakeBd{
     ),
   ];
 
+  List<ProductsBd> myCart = [];
+
+
+
 
 
 

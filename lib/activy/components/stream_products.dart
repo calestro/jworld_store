@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/components/buy_button.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
 
 class StreamProducts extends StatelessWidget {
-  const StreamProducts({Key? key}) : super(key: key);
+  final update;
+  const StreamProducts({Key? key, required this.update}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class StreamProducts extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 250,
-          mainAxisExtent: 250,
+          mainAxisExtent: 300,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -34,10 +36,13 @@ class StreamProducts extends StatelessWidget {
                   //Image
                  Image.asset(bd.products[index].image[0],width: 120,),
                   //text
-                  Text(bd.products[index].name),
+                  Text(bd.products[index].name, style: MainAppStyle().textProductName),
 
                   //price
-                  Text(bd.products[index].price.toString()),
+                  Text(MainAppStyle().priceConvert(bd.products[index].price)),
+
+                  //buttons
+                  BuyButton(snapshot:bd.products[index], update:update),
                 ]
 
 

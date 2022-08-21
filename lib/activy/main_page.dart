@@ -55,7 +55,9 @@ class _MainPageState extends State<MainPage> {
 
             //conteudo
             Expanded(
-                child: StreamProducts()
+                child: StreamProducts(update:() {
+              setState(() {});
+            })
             ),
           ],
         ),
