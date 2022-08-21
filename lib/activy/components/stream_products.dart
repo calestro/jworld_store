@@ -24,21 +24,24 @@ class StreamProducts extends StatelessWidget {
           crossAxisSpacing: 10,
         ),
       itemBuilder: (context,index){
-          return Container(
-            margin: EdgeInsets.all(10),
-            decoration:MainAppStyle().tileProducts,
-            child: Column(
-              children:[
-                //Image
-               Image.asset(bd.products[index].image[0],width: 120,),
-                //text
-                Text(bd.products[index].name),
+          return GestureDetector(
+            onTap: (){},
+            child: Container(
+              margin: EdgeInsets.all(10),
+              decoration:MainAppStyle().tileProducts,
+              child: Column(
+                children:[
+                  //Image
+                 Image.asset(bd.products[index].image[0],width: 120,),
+                  //text
+                  Text(bd.products[index].name),
 
-                //price
-                Text(bd.products[index].price.toString()),
-              ]
+                  //price
+                  Text(bd.products[index].price.toString()),
+                ]
 
 
+              ),
             ),
           );
       },
