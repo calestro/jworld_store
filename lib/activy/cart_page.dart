@@ -11,13 +11,19 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        //AppBar
-        //lista de produtos
-        //bottom descrição
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("J World"),
+
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          //AppBar
+          //lista de produtos
+          //bottom descrição
+        ],
+      ),
     );
   }
 }
