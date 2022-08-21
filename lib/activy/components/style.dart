@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //Estilos do componente Search Bar
 class MainAppStyle {
 
-  // Input Decoration da Search TexField
+  // Box Decoration
   final InputDecoration inputStyle = InputDecoration(
     filled: true,
     fillColor: Colors.white,
@@ -67,5 +67,14 @@ class MainAppStyle {
       right:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
     ),
   );
+
+  //TextStyle
+  final TextStyle textMenuCategory = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+
+
 
 }

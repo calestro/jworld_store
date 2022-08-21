@@ -1,8 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mobile_j_world/activy/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/components/category_menu.dart';
+import 'package:mobile_j_world/activy/components/delegate_build.dart';
 import 'package:mobile_j_world/activy/components/stream_products.dart';
 
 
@@ -17,49 +17,42 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   ScrollController scroll = ScrollController();
-  double size = 0;
-  @override
-  void initState() {}
-
   @override
   Widget build(BuildContext context) {
-    double wd = MediaQuery.of(context).size.width;
-    double hg = MediaQuery.of(context).size.height;
-
-
-
     return Scaffold(
       body: NestedScrollView(
         floatHeaderSlivers: true,
         controller: scroll,
         headerSliverBuilder: (context,innerBoxIsScrolled) {
-
           return [
-          SliverAppBar(
-            //title: Image.asset("img/logo"),
-            centerTitle: true,
-            backgroundColor: Colors.red,
-            stretch: true,
-          ),
-
+          //App Bar Title
             SliverAppBar(
-              snap: true,
-              pinned: true,
-              floating: true,
+            title: Image.asset("img/logo.png", scale: 4,),
               centerTitle: true,
-              collapsedHeight: 60,
-              title: AppBarSearch(),
-              scrolledUnderElevation: 0,
+              pinned: false,
+              floating: false,
+              toolbarHeight: 96,
+              backgroundColor: Colors.red,
+              stretch: true,
+          ),
+            SliverPersistentHeader(
+                pinned: true,
+                floating: true,
+                delegate: DelegateClass(
+                  child: AppBarSearch(),
+                )
             ),
-
+            //Menu
             SliverToBoxAdapter(
               child: CategoryMenu(),
-            )
+            ),
           ];
         },
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
+            //Banners
+
             //conteudo
             Expanded(
                 child: StreamProducts()
@@ -71,3 +64,6 @@ class _MainPageState extends State<MainPage> {
   }
 
 }
+
+
+

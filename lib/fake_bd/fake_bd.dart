@@ -14,8 +14,8 @@ class FakeBd{
   FakeBd._internal();
 
   List <CategoryBd> category =[
-    CategoryBd("Camisas", Icons.add),
-    CategoryBd("Casacos", Icons.add),
+    CategoryBd("Camisas", Icons.account_tree_sharp),
+    CategoryBd("Casacos", Icons.ac_unit_rounded),
     CategoryBd("Decoração", Icons.add),
     CategoryBd("Figures", Icons.add),
     CategoryBd("Cosplay", Icons.add),

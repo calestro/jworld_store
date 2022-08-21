@@ -35,11 +35,13 @@ class CategoryMenu extends StatelessWidget {
                         children: [
                           Expanded(
                             flex: 2,
-                              child: Icon(bd.category[index].icon),
+                              child: Icon(bd.category[index].icon,
+                                color: Colors.white,
+                              ),
                           ),
                           Expanded(
                               child: Text(bd.category[index].name,
-                                style: TextStyle(fontSize: 12),
+                                style:MainAppStyle().textMenuCategory,
                               )
                           ),
                         ],
