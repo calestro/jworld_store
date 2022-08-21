@@ -25,10 +25,10 @@ DelegateClass({required this.child});
   }
 
   @override
-  double get maxExtent => isSize ? 90 : 130;
+  double get maxExtent => isSize ? 104 : 131;
 
   @override
-  double get minExtent => isSize ? 90 : 130;
+  double get minExtent => 104;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
