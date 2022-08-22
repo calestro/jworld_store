@@ -96,7 +96,7 @@ class _CartPageState extends State<CartPage> {
           ),
 
           SizedBox(
-            height: hg * 0.22,
+            height: hg * 0.2,
             width: double.maxFinite,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

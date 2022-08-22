@@ -13,11 +13,11 @@ class StreamProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
     final double wd = MediaQuery.of(context).size.width;
-    int crossXGrid = wd.toInt();
     return GridView.builder(
       itemCount: bd.products.length,
         scrollDirection: Axis.vertical,
         physics: ScrollPhysics(),
+        padding: EdgeInsets.only(top: 15),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 250,
@@ -29,7 +29,7 @@ class StreamProducts extends StatelessWidget {
           return GestureDetector(
             onTap: (){},
             child: Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(bottom: 10),
               decoration:MainAppStyle().tileProducts,
               child: Column(
                 mainAxisSize: MainAxisSize.max,

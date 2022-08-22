@@ -19,45 +19,41 @@ class _MainPageState extends State<MainPage> {
   ScrollController scroll = ScrollController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: NestedScrollView(
-        floatHeaderSlivers: true,
-        controller: scroll,
-        headerSliverBuilder: (context,innerBoxIsScrolled) {
-          return [
-          //App Bar Title
-            SliverAppBar(
-            title: Image.asset("img/logo.png", scale: 4,),
-              centerTitle: true,
-              pinned: false,
-              floating: false,
-              toolbarHeight: 96,
-              backgroundColor: Colors.red,
-              stretch: true,
+    return Stack(
+      children: [
+        Scaffold(
+          body: NestedScrollView(
+            floatHeaderSlivers: true,
+            controller: scroll,
+            headerSliverBuilder: (context,innerBoxIsScrolled) {
+              return [
+              //App Bar Title
+                SliverAppBar(
+                title: Image.asset("img/logo.png", scale: 4,),
+                  centerTitle: true,
+                  pinned: false,
+                  floating: false,
+                  toolbarHeight: 96,
+                  backgroundColor: Colors.red,
+                  stretch: true,
+              ),
+                SliverPersistentHeader(
+                    pinned: true,
+                    floating: true,
+                    delegate: DelegateClass(
+                      childPinned:AppBarSearch(update: update),
+                      child:CategoryMenu(),
+                    )
+                ),
+
+
+
+              ];
+            },
+            body: StreamProducts(update:update),
           ),
-            SliverPersistentHeader(
-                pinned: true,
-                floating: true,
-                delegate: DelegateClass(
-                  child: AppBarSearch(update: update),
-                )
-            ),
-            //Menu
-            SliverToBoxAdapter(
-              child: CategoryMenu(),
-            ),
-          ];
-        },
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            //conteudo
-            Expanded(
-                child: StreamProducts(update:update),
-            ),
-          ],
         ),
-      ),
+      ],
     );
   }
   void update(){
