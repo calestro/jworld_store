@@ -10,6 +10,7 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
+
     return GestureDetector(
       onTap: (){
         bd.myCart.add(snapshot);

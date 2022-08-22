@@ -7,8 +7,8 @@ import '../../fake_bd/fake_bd.dart';
 
 // Barra do Search MainPage
 class AppBarSearch extends StatelessWidget {
-
-  const AppBarSearch({Key? key,}) : super(key: key);
+ final Function update;
+  const AppBarSearch({Key? key, required this.update}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class AppBarSearch extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const CartPage()));
+                        builder: (context) => CartPage(update:update)));
               },
               icon: const Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
             ),

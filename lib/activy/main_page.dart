@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
                 pinned: true,
                 floating: true,
                 delegate: DelegateClass(
-                  child: AppBarSearch(),
+                  child: AppBarSearch(update: update),
                 )
             ),
             //Menu
@@ -51,18 +51,19 @@ class _MainPageState extends State<MainPage> {
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            //Banners
-
             //conteudo
             Expanded(
-                child: StreamProducts(update:() {
-              setState(() {});
-            })
+                child: StreamProducts(update:update),
             ),
           ],
         ),
       ),
     );
+  }
+  void update(){
+    setState(() {
+
+    });
   }
 
 }

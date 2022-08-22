@@ -32,6 +32,8 @@ class StreamProducts extends StatelessWidget {
               margin: EdgeInsets.all(10),
               decoration:MainAppStyle().tileProducts,
               child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children:[
                   //Image
                  Image.asset(bd.products[index].image[0],width: 120,),
