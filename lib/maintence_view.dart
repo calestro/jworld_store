@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/global_data.dart';
 
 import 'activy/main_page.dart';
 
@@ -14,6 +15,18 @@ class MaintenceView extends StatefulWidget {
 class _MaintenceViewState extends State<MaintenceView> {
   @override
   Widget build(BuildContext context) {
+  if(MediaQuery.of(context).size.width < 800) {
+    setState(() {
+      GlobalData().isMobile = true;
+    });
+  }
+    else{
+    setState(() {
+      GlobalData().isMobile = false;
+    });
+  }
+
+
     return MainPage();
   }
 }

@@ -11,12 +11,11 @@ DelegateClass({required this.child, required this.childPinned});
       isSize = 0 == shrinkOffset ;
       if(isSize) {
         return Container(
-          color: Colors.red,
           child: Column(
             children: [
               childPinned,
               Container(
-                alignment: Alignment.center,
+                  alignment: Alignment.center,
                 color: Colors.white,
                   child: child
               ),
@@ -39,7 +38,7 @@ DelegateClass({required this.child, required this.childPinned});
   }
 
   @override
-  double get maxExtent =>160;
+  double get maxExtent =>170;
 
   @override
   double get minExtent =>130;

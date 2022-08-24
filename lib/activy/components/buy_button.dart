@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
@@ -13,8 +14,7 @@ class BuyButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        bd.myCart.add(snapshot);
-        print(bd.myCart);
+        bd.myCart.add(MyCartHelper(snapshot, 1, "M"));
         update();
       },
       child: Container(

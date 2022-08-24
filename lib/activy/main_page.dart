@@ -4,6 +4,7 @@ import 'package:mobile_j_world/activy/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/components/category_menu.dart';
 import 'package:mobile_j_world/activy/components/delegate_build.dart';
 import 'package:mobile_j_world/activy/components/stream_products.dart';
+import 'package:mobile_j_world/global_data.dart';
 
 
 
@@ -29,11 +30,19 @@ class _MainPageState extends State<MainPage> {
               return [
               //App Bar Title
                 SliverAppBar(
-                title: Image.asset("img/logo.png", scale: 4,),
+                title: Image.asset("img/logo.png", scale: 5,),
                   centerTitle: true,
                   pinned: false,
                   floating: false,
-                  toolbarHeight: 96,
+
+                  //mobile
+                  leading: GlobalData().isMobile ? Container(
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.all(11),
+                    child: Icon(Icons.menu, size: 40,),
+                  ): null,
+
+                  toolbarHeight: 80,
                   backgroundColor: Colors.red,
                   stretch: true,
               ),
@@ -45,9 +54,6 @@ class _MainPageState extends State<MainPage> {
                       child:CategoryMenu(),
                     )
                 ),
-
-
-
               ];
             },
             body: StreamProducts(update:update),

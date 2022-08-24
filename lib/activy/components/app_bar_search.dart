@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/cart_page.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/global_data.dart';
 
 import '../../fake_bd/fake_bd.dart';
 
@@ -51,8 +52,19 @@ class AppBarSearch extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 20.0,
+            width: 10,
           ),
+          GlobalData().isMobile ? SizedBox(): SizedBox(
+            child: Container(
+              width: 100,
+              height: 40,
+              alignment: AlignmentDirectional.bottomEnd,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+          )
 
         ],
       ),

@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/components/buy_button.dart';
+import 'package:mobile_j_world/activy/components/size_selector.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
+import '../helper/cart_helper.dart';
 
 
-class StreamProducts extends StatelessWidget {
+
+class StreamProducts extends StatefulWidget {
   final update;
   const StreamProducts({Key? key, required this.update}) : super(key: key);
 
   @override
+  State<StreamProducts> createState() => _StreamProductsState();
+}
+
+class _StreamProductsState extends State<StreamProducts> {
+  Map<int,MyCartHelper> cart = {};
+  @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
     final double wd = MediaQuery.of(context).size.width;
+    MyFunctions funct = MyFunctions();
     return GridView.builder(
       itemCount: bd.products.length,
         scrollDirection: Axis.vertical,
@@ -20,13 +31,14 @@ class StreamProducts extends StatelessWidget {
         padding: EdgeInsets.only(top: 15),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 250,
-          mainAxisExtent: 300,
+        maxCrossAxisExtent: 300,
+          mainAxisExtent: 320,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
       itemBuilder: (context,index){
-          return GestureDetector(
+
+        return GestureDetector(
             onTap: (){},
             child: Container(
               margin: EdgeInsets.only(bottom: 10),
@@ -40,11 +52,23 @@ class StreamProducts extends StatelessWidget {
                   //text
                   Text(bd.products[index].name, style: MainAppStyle().textProductName),
 
+                  //size select
+                  SizeSelector(
+                    sizes: funct.sizeTolist(index),
+                    update: widget.update,
+                  ),
+
                   //price
                   Text(MainAppStyle().priceConvert(bd.products[index].price)),
 
+
+                  //qtd
+
                   //buttons
-                  BuyButton(snapshot:bd.products[index], update:update),
+                  BuyButton(
+                      snapshot:bd.products[index],
+                      update:widget.update
+                  ),
                 ]
 
 

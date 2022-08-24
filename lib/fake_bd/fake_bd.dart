@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'dart:async';
 
 import 'package:mobile_j_world/fake_bd/helper/category.dart';
@@ -29,7 +30,7 @@ class FakeBd{
         {
           "M":10,
           "P":10,
-          "G":10,
+          "G":0,
         },
         [
           "img/products/git.png",
@@ -110,7 +111,7 @@ class FakeBd{
     ),
   ];
 
-  List<ProductsBd> myCart = [];
+  List<MyCartHelper> myCart = [];
 
 
 

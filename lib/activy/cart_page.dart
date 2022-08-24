@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
+import 'package:mobile_j_world/fake_bd/helper/products.dart';
 
 
 
@@ -17,6 +19,8 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
     double hg = MediaQuery.of(context).size.height;
+
+
 
     return Scaffold(
       appBar: AppBar(
@@ -60,10 +64,10 @@ class _CartPageState extends State<CartPage> {
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(bd.myCart[index].name),
+                                  Text("teste"),
                                   Text("Quantidade:"),
                                   Text("Size"),
-                                  Text(MainAppStyle().priceConvert(bd.myCart[index].price)),
+                                  Text("teste"),
                                 ],
                               ),
                             ),
@@ -71,7 +75,7 @@ class _CartPageState extends State<CartPage> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    Image.asset(bd.myCart[index].image[0], width: 70,),
+                                    Image.asset("teste",),
                                   ],
                                 )
                             )
