@@ -50,7 +50,7 @@ class _QuantityState extends State<Quantity> {
             controller: controller,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
             ),
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(

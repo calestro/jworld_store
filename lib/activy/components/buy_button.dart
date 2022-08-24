@@ -14,26 +14,29 @@ class BuyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
 
-    return GestureDetector(
-      onTap: (){
-        bd.myCart.add(MyCartHelper(snapshot, SendToCart().qtd[index]!, SendToCart().size[index]!));
-        print(SendToCart().qtd);
-        update();
-      },
-      child: Container(
-        width: double.maxFinite,
-        padding: EdgeInsets.all(5),
-        height: 40,
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.shopping_cart_outlined,color: Colors.white,),
-            Text("COMPRAR", style: TextStyle(color: Colors.white),)
-          ],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: (){
+          bd.myCart.add(MyCartHelper(snapshot, SendToCart().qtd[index]!, SendToCart().size[index]!));
+          print(SendToCart().qtd);
+          update();
+        },
+        child: Container(
+          width: double.maxFinite,
+          padding: EdgeInsets.all(5),
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.shopping_cart_outlined,color: Colors.white,),
+              Text("COMPRAR", style: TextStyle(color: Colors.white),)
+            ],
+          ),
         ),
       ),
     );

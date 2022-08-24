@@ -77,7 +77,7 @@ class _CartPageState extends State<CartPage> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    Image.asset("teste",),
+                                    Image.asset(bd.myCart[index].product.image[0], width:70),
                                   ],
                                 )
                             )

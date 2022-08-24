@@ -4,6 +4,7 @@ import 'package:mobile_j_world/activy/components/quantity.dart';
 import 'package:mobile_j_world/activy/components/size_selector.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
+import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 import '../helper/cart_helper.dart';
@@ -19,7 +20,6 @@ class StreamProducts extends StatefulWidget {
 }
 
 class _StreamProductsState extends State<StreamProducts> {
-  Map<int,MyCartHelper> cart = {};
   @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
