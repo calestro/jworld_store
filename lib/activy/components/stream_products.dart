@@ -4,10 +4,8 @@ import 'package:mobile_j_world/activy/components/quantity.dart';
 import 'package:mobile_j_world/activy/components/size_selector.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
-import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
-import '../helper/cart_helper.dart';
 
 
 
@@ -32,8 +30,8 @@ class _StreamProductsState extends State<StreamProducts> {
         padding: EdgeInsets.only(top: 15),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 300,
-          mainAxisExtent: 340,
+          maxCrossAxisExtent: 300,
+          mainAxisExtent: 350,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -49,9 +47,13 @@ class _StreamProductsState extends State<StreamProducts> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children:[
                   //Image
-                 Image.asset(bd.products[index].image[0],width: 120,),
+                 Image.asset(
+                   bd.products[index].image[0],width: 120,
+                 ),
                   //text
-                  Text(bd.products[index].name, style: MainAppStyle().textProductName),
+                  Text(
+                      bd.products[index].name, style: MainAppStyle().textProductName
+                  ),
 
                   //size select
                   SizeSelector(
@@ -61,10 +63,14 @@ class _StreamProductsState extends State<StreamProducts> {
                   ),
 
                   //qtd
-                  Quantity(indexStream: index,),
+                  Quantity(
+                    indexStream: index
+                  ),
 
                   //price
-                  Text(funct.priceConvert(bd.products[index].price)),
+                  Text(
+                      funct.priceConvert(bd.products[index].price)
+                  ),
 
                   //buttons
                   BuyButton(

@@ -13,8 +13,12 @@ class AppBarSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int badge = 0;
     FakeBd bd = FakeBd();
     TextEditingController searchController = TextEditingController();
+    bd.myCart.forEach((element) {
+      badge = badge + element.qtd;
+    });
     return Container(
       color: Colors.red,
       width: MediaQuery.of(context).size.width,
@@ -37,7 +41,8 @@ class AppBarSearch extends StatelessWidget {
           ),
 
           Badge(
-            badgeContent: Text(bd.myCart.length.toString(), style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
+            badgeContent: Text(badge.toString(),
+              style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
             position: const BadgePosition(start: 40, bottom: 30),
             showBadge: bd.myCart.isEmpty ? false : true,
             badgeColor: Colors.redAccent,

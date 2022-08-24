@@ -3,7 +3,7 @@ import 'package:mobile_j_world/fake_bd/helper/products.dart';
 
 class MyCartHelper{
 
-  final int qtd;
+  int qtd;
   final ProductsBd product;
   final String size;
 

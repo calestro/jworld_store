@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
@@ -13,15 +14,15 @@ class BuyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
+    MyFunctions funct = MyFunctions();
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: (){
-          bd.myCart.add(MyCartHelper(snapshot, SendToCart().qtd[index]!, SendToCart().size[index]!));
-          print(SendToCart().qtd);
+        onTap:(){
+          funct.insertCart(snapshot, index);
           update();
-        },
+          },
         child: Container(
           width: double.maxFinite,
           padding: EdgeInsets.all(5),

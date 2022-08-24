@@ -20,6 +20,7 @@ class _SizeSelectorState extends State<SizeSelector> {
   void initState() {
     selectedSize = widget.sizes[0];
     send.size.addAll({widget.indexStream:selectedSize});
+    print("chamou");
     super.initState();
   }
   @override

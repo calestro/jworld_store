@@ -18,8 +18,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   ScrollController scroll = ScrollController();
+
   @override
   Widget build(BuildContext context) {
+    GlobalData data = GlobalData();
     return Stack(
       children: [
         Scaffold(
