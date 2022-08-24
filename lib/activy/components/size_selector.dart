@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 
-class SizeSelector extends StatelessWidget {
+class SizeSelector extends StatefulWidget {
   final List<String> sizes;
+  final int indexStream;
   final Function update;
-  String selectedSize = "M";
+
   SizeSelector(
-      {Key? key, required this.sizes, required this.update})
+      {Key? key, required this.sizes, required this.update, required this.indexStream})
       : super(key: key);
+
+  @override
+  State<SizeSelector> createState() => _SizeSelectorState();
+}
+
+class _SizeSelectorState extends State<SizeSelector> {
+  String selectedSize = "M";
 
   @override
   Widget build(BuildContext context) {
@@ -15,30 +24,33 @@ class SizeSelector extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: List.generate(
-          sizes.length,
+          widget.sizes.length,
               (index) => Padding(
             padding: const EdgeInsets.all(5.0),
             child: Material(
               child: InkWell(
                 borderRadius: BorderRadius.circular(3),
                 onTap: () {
-                  selectedSize = sizes[index];
-                  update();
+                  selectedSize = widget.sizes[index];
+                  setState((){});
+                  SendToCart().size = {
+                    widget.indexStream:selectedSize
+                  };
                 },
                 child: Ink(
                   height: 30,
                   width: 30,
                   decoration: BoxDecoration(
-                      color: selectedSize == sizes[index]
+                      color: selectedSize == widget.sizes[index]
                           ? Color(0xFF667EEA)
                           : Color(0xFFF3F3F3),
                       borderRadius: BorderRadius.circular(3)),
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
-                      sizes[index],
+                      widget.sizes[index],
                       style:TextStyle(
-                          color: selectedSize == sizes[index]
+                          color: selectedSize == widget.sizes[index]
                               ? Colors.white
                               : Colors.black87,
                         fontSize: 12,

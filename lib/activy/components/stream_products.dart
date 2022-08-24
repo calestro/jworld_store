@@ -56,6 +56,7 @@ class _StreamProductsState extends State<StreamProducts> {
                   SizeSelector(
                     sizes: funct.sizeTolist(index),
                     update: widget.update,
+                    indexStream:index
                   ),
 
                   //price
@@ -67,6 +68,7 @@ class _StreamProductsState extends State<StreamProducts> {
                   //buttons
                   BuyButton(
                       snapshot:bd.products[index],
+                      index: index,
                       update:widget.update
                   ),
                 ]

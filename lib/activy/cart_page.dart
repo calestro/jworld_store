@@ -64,9 +64,9 @@ class _CartPageState extends State<CartPage> {
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("teste"),
-                                  Text("Quantidade:"),
-                                  Text("Size"),
+                                  Text(bd.myCart[index].ProductsBd.name),
+                                  Text(bd.myCart[index].qtd.toString()),
+                                  Text(bd.myCart[index].size),
                                   Text("teste"),
                                 ],
                               ),

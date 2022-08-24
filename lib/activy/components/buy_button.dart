@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
+import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
 class BuyButton extends StatelessWidget {
   final snapshot;
   final Function update;
-  const BuyButton({Key? key, required this.snapshot, required this.update}) : super(key: key);
+  final int index;
+  const BuyButton({Key? key, required this.snapshot, required this.update, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class BuyButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        bd.myCart.add(MyCartHelper(snapshot, 1, "M"));
+        bd.myCart.add(MyCartHelper(snapshot, 1, SendToCart().size[index]!));
         update();
       },
       child: Container(

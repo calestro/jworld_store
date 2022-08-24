@@ -5,7 +5,7 @@ class MyCartHelper{
 
   final int qtd;
   final ProductsBd;
-  final size;
+  final String size;
 
   MyCartHelper(this.ProductsBd, this.qtd, this.size);
 
