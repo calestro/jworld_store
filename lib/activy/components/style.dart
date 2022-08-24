@@ -82,10 +82,6 @@ final TextStyle textPrice = TextStyle(
     fontWeight: FontWeight.bold,
   );
 
-String priceConvert (double price) {
-  String stringPrice = price.toStringAsFixed(2);
-  stringPrice = "R\$ " + stringPrice.replaceAll(".", ",");
-  return stringPrice;
-}
+
 
 }

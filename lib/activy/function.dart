@@ -22,6 +22,11 @@ class MyFunctions{
     });
     return sizes;
   }
+  String priceConvert (double price) {
+    String stringPrice = price.toStringAsFixed(2);
+    stringPrice = "R\$ " + stringPrice.replaceAll(".", ",");
+    return stringPrice;
+  }
 
 
 

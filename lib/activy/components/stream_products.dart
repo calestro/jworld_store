@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/components/buy_button.dart';
+import 'package:mobile_j_world/activy/components/quantity.dart';
 import 'package:mobile_j_world/activy/components/size_selector.dart';
 import 'package:mobile_j_world/activy/components/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
@@ -32,7 +33,7 @@ class _StreamProductsState extends State<StreamProducts> {
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 300,
-          mainAxisExtent: 320,
+          mainAxisExtent: 340,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -59,11 +60,11 @@ class _StreamProductsState extends State<StreamProducts> {
                     indexStream:index
                   ),
 
-                  //price
-                  Text(MainAppStyle().priceConvert(bd.products[index].price)),
-
-
                   //qtd
+                  Quantity(indexStream: index,),
+
+                  //price
+                  Text(funct.priceConvert(bd.products[index].price)),
 
                   //buttons
                   BuyButton(

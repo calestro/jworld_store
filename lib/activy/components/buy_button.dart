@@ -16,7 +16,8 @@ class BuyButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        bd.myCart.add(MyCartHelper(snapshot, 1, SendToCart().size[index]!));
+        bd.myCart.add(MyCartHelper(snapshot, SendToCart().qtd[index]!, SendToCart().size[index]!));
+        print(SendToCart().qtd);
         update();
       },
       child: Container(

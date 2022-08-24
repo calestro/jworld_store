@@ -5,7 +5,6 @@ class SizeSelector extends StatefulWidget {
   final List<String> sizes;
   final int indexStream;
   final Function update;
-
   SizeSelector(
       {Key? key, required this.sizes, required this.update, required this.indexStream})
       : super(key: key);
@@ -15,17 +14,23 @@ class SizeSelector extends StatefulWidget {
 }
 
 class _SizeSelectorState extends State<SizeSelector> {
-  String selectedSize = "M";
-
+  late String selectedSize;
+  SendToCart send = SendToCart();
+@override
+  void initState() {
+    selectedSize = widget.sizes[0];
+    send.size.addAll({widget.indexStream:selectedSize});
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: List.generate(
           widget.sizes.length,
-              (index) => Padding(
+              (index) {
+                return Padding(
             padding: const EdgeInsets.all(5.0),
             child: Material(
               child: InkWell(
@@ -33,9 +38,10 @@ class _SizeSelectorState extends State<SizeSelector> {
                 onTap: () {
                   selectedSize = widget.sizes[index];
                   setState((){});
-                  SendToCart().size = {
+                  send.size.addAll({
                     widget.indexStream:selectedSize
-                  };
+                  }
+                  );
                 },
                 child: Ink(
                   height: 30,
@@ -61,7 +67,8 @@ class _SizeSelectorState extends State<SizeSelector> {
                 ),
               ),
             ),
-          )),
+          );
+              }),
     );
   }
 }
