@@ -41,7 +41,7 @@ class _StreamProductsState extends State<StreamProducts> {
               Navigator.push(context, MaterialPageRoute(
                   builder: (context)=>DescActivy(
                     product: bd.products[index],
-                    update:(){setState(() {});},
+                    update:(){setState(() {widget.update();});},
                     index: index,
                   )));
             },

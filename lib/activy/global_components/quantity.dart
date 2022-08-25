@@ -12,9 +12,11 @@ class Quantity extends StatefulWidget {
 }
 
 class _QuantityState extends State<Quantity> {
+
   int qtd = 1;
   late TextEditingController controller;
   SendToCart send = SendToCart();
+
   @override
   void initState() {
     controller = TextEditingController();
@@ -29,7 +31,9 @@ class _QuantityState extends State<Quantity> {
   }
   @override
   Widget build(BuildContext context) {
+
     controller.text = qtd.toString();
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,

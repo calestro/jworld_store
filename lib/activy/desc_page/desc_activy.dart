@@ -21,7 +21,6 @@ class DescActivy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
-    final double hg = MediaQuery.of(context).size.height;
     final MyFunctions funct = MyFunctions();
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +28,7 @@ class DescActivy extends StatelessWidget {
         centerTitle: true,
       ),
      body: Padding(
-       padding: EdgeInsets.all(12),
+       padding: const EdgeInsets.all(12),
        child: SingleChildScrollView(
          child: LayoutBuilder(
            builder: (context, constraints){
@@ -39,25 +38,25 @@ class DescActivy extends StatelessWidget {
                  children: [
                    Container(
                      width: wd * .75,
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                      decoration: DescStyle().imageBack,
                      child: Container(
-                       padding: EdgeInsets.all(5),
+                       padding: const EdgeInsets.all(5),
                          decoration: DescStyle().image,
                          child: Image.asset(product.image[0], scale: 7,)
                      ),
                    ),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
                    Text(product.name, style:DescStyle().title),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
                    Text(product.description),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
                    SizeSelector(sizes:funct.sizeTolist(index), update: update, indexStream: index),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
                    Text(funct.priceConvert(product.price), style: DescStyle().price,),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
                    Quantity(indexStream: index, hg: 40, wd: 55,),
-                   SizedBox(height:20),
+                   const SizedBox(height:20),
 
                    SizedBox(
                      width: wd * .85,
@@ -71,15 +70,20 @@ class DescActivy extends StatelessWidget {
                  children: [
                    Column(
                      children: [
-                       Text("Imagem")
+                       Image.asset(product.image[0], width: wd /2,)
                      ],
                    ),
                    Column(
                      children: [
-                       Text("Nome"),
-                       Text("Preço"),
-                       Text("Comprar"),
-                       Text("Descrição"),
+                       Text(product.name, style: DescStyle().title,),
+                       Text(product.description,),
+                       SizeSelector(sizes: funct.sizeTolist(index), update: update, indexStream: index),
+                       Text(funct.priceConvert(product.price)),
+                       Quantity(indexStream: index, hg: 40,wd:55),
+                       SizedBox(
+                           width: wd * .85,
+                           child: BuyButton(snapshot: product, update:update, index: index)),
+
                      ],
                    ),
                  ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/cart_page/components/cart_quantity.dart';
-import 'package:mobile_j_world/activy/cart_page/components/cupom.dart';
 import 'package:mobile_j_world/activy/cart_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
@@ -18,14 +17,22 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+
     FakeBd bd = FakeBd();
+    CartStyle style = CartStyle();
     MyFunctions funct = MyFunctions();
+
     double hg = MediaQuery.of(context).size.height;
-    bd.myCart.removeWhere((element) => element.qtd == 0);
     double total = 0;
+
+    //Remove os itens com 0 quantidade
+    bd.myCart.removeWhere((element) => element.qtd == 0);
+
+    //calcula o preço total
     for (var element in bd.myCart) {
       total = total + element.qtd * element.product.price;
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Image.asset("img/logo.png",height: 50, ),
@@ -45,7 +52,6 @@ class _CartPageState extends State<CartPage> {
               shrinkWrap: true,
               itemCount: bd.myCart.length,
               itemBuilder: (context, index){
-
 
                 return Stack(
                   children: [
@@ -70,14 +76,14 @@ class _CartPageState extends State<CartPage> {
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(bd.myCart[index].product.name, style: CartStyle().titleCart,),
+                                  Text(bd.myCart[index].product.name, style: style.titleCart,),
 
                                   QuantityCart(
                                       index: index,
                                       update:(){setState(() {widget.update();});}),
 
                                   Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
-                                    style: CartStyle().price,
+                                    style: style.price,
                                   ),
                                 ],
                               ),
@@ -91,10 +97,10 @@ class _CartPageState extends State<CartPage> {
                                       alignment: Alignment.center,
                                       width: 21,
                                       height: 21,
-                                      decoration: CartStyle().boxSize,
+                                      decoration: style.boxSize,
                                       child: Text(bd.myCart[index].size,
                                         textAlign: TextAlign.center,
-                                        style: CartStyle().sizeText,),
+                                        style: style.sizeText,),
                                     )
                                   ],
                                 )
@@ -108,7 +114,7 @@ class _CartPageState extends State<CartPage> {
                         right: 5,
                         child: IconButton(
                             onPressed: (){
-                              bd.myCart.removeAt(index);
+                              bd.myCart.removeAt(index); //icone que remove o item
                               setState(() {widget.update();});
                               },
                             icon: const Icon(Icons.close))),
@@ -131,15 +137,15 @@ class _CartPageState extends State<CartPage> {
                   child: Text(bd.myCart.isEmpty ? "R\$ 0,00" :
                   funct.priceConvert(total),
                       textAlign: TextAlign.center,
-                      style:CartStyle().allTotal
+                      style:style.allTotal
                   ),
                 ),
                 Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: ElevatedButton(
                           onPressed: (){},
-                          child: Text("Continuar")),
+                          child: const Text("Continuar")),
                     ))
 
               ],
