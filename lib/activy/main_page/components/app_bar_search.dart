@@ -1,10 +1,10 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/cart_page.dart';
-import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/activy/cart_page/cart_page.dart';
+import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/global_data.dart';
 
-import '../../fake_bd/fake_bd.dart';
+import '../../../fake_bd/fake_bd.dart';
 
 // Barra do Search MainPage
 class AppBarSearch extends StatelessWidget {

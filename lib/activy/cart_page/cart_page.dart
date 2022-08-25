@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';

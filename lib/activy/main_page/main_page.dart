@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:mobile_j_world/activy/components/app_bar_search.dart';
-import 'package:mobile_j_world/activy/components/category_menu.dart';
-import 'package:mobile_j_world/activy/components/delegate_build.dart';
-import 'package:mobile_j_world/activy/components/stream_products.dart';
-import 'package:mobile_j_world/activy/sign_signup_activy.dart';
+import 'package:mobile_j_world/activy/main_page/components/app_bar_search.dart';
+import 'package:mobile_j_world/activy/main_page/components/category_menu.dart';
+import 'package:mobile_j_world/activy/helper/delegate_build.dart';
+import 'package:mobile_j_world/activy/main_page/components/stream_products.dart';
+import 'package:mobile_j_world/activy/sign_signup/sign_signup_activy.dart';
 import 'package:mobile_j_world/global_data.dart';
 
 

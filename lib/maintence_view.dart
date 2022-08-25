@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_j_world/global_data.dart';
 import 'package:wakelock/wakelock.dart';
 
-import 'activy/main_page.dart';
+import 'activy/main_page/main_page.dart';
 
 
 // Vai Configurar minhas Activy de acordo com o dispositivo

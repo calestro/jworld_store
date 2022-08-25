@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/components/buy_button.dart';
-import 'package:mobile_j_world/activy/components/quantity.dart';
-import 'package:mobile_j_world/activy/components/size_selector.dart';
-import 'package:mobile_j_world/activy/components/style.dart';
+import 'package:mobile_j_world/activy/global_components/buy_button.dart';
+import 'package:mobile_j_world/activy/global_components/quantity.dart';
+import 'package:mobile_j_world/activy/global_components/size_selector.dart';
+import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
