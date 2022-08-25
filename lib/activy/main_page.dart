@@ -4,6 +4,7 @@ import 'package:mobile_j_world/activy/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/components/category_menu.dart';
 import 'package:mobile_j_world/activy/components/delegate_build.dart';
 import 'package:mobile_j_world/activy/components/stream_products.dart';
+import 'package:mobile_j_world/activy/sign_signup_activy.dart';
 import 'package:mobile_j_world/global_data.dart';
 
 
@@ -17,7 +18,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  ScrollController scroll = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,6 @@ class _MainPageState extends State<MainPage> {
       children: [
         Scaffold(
           body: NestedScrollView(
-            floatHeaderSlivers: true,
-            controller: scroll,
             headerSliverBuilder: (context,innerBoxIsScrolled) {
               return [
               //App Bar Title
@@ -41,7 +39,11 @@ class _MainPageState extends State<MainPage> {
                   leading: GlobalData().isMobile ? Container(
                     alignment: Alignment.topLeft,
                     margin: EdgeInsets.all(11),
-                    child: Icon(Icons.menu, size: 40,),
+                    child: GestureDetector(
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> SignPage()));
+                      },
+                        child: Icon(Icons.menu, size: 40,)
+                    ),
                   ): null,
 
                   toolbarHeight: 80,

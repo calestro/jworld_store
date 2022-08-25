@@ -8,7 +8,7 @@ DelegateClass({required this.child, required this.childPinned});
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-      isSize = 0 == shrinkOffset ;
+      isSize = 9 > shrinkOffset ;
       if(isSize) {
         return Container(
           child: Column(

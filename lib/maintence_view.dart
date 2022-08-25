@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/global_data.dart';
+import 'package:wakelock/wakelock.dart';
 
 import 'activy/main_page.dart';
 
@@ -11,7 +12,6 @@ class MaintenceView extends StatefulWidget {
   @override
   State<MaintenceView> createState() => _MaintenceViewState();
 }
-
 class _MaintenceViewState extends State<MaintenceView> {
   @override
   Widget build(BuildContext context) {

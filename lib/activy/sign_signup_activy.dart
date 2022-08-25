@@ -11,6 +11,22 @@ class SignPage extends StatefulWidget {
 class _SignPageState extends State<SignPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Image.asset("img/logo.png", scale: 1,),
+          Text("Login"),
+          Text("Email"),
+          Text("Senha"),
+          SizedBox(height: 10,),
+          ElevatedButton(onPressed:(){}, child: Text("Login")),
+          Text("Esqueceu a senha ?")
+
+        ],
+      ),
+    );
   }
 }

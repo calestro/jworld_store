@@ -11,6 +11,7 @@ import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 class StreamProducts extends StatefulWidget {
   final update;
+
   const StreamProducts({Key? key, required this.update}) : super(key: key);
 
   @override
@@ -20,18 +21,16 @@ class StreamProducts extends StatefulWidget {
 class _StreamProductsState extends State<StreamProducts> {
   @override
   Widget build(BuildContext context) {
+
     FakeBd bd = FakeBd();
     final double wd = MediaQuery.of(context).size.width;
     MyFunctions funct = MyFunctions();
     return GridView.builder(
       itemCount: bd.products.length,
-        scrollDirection: Axis.vertical,
-        physics: ScrollPhysics(),
         padding: EdgeInsets.only(top: 15),
-        shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
-          mainAxisExtent: 350,
+          mainAxisExtent: 360,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -69,8 +68,14 @@ class _StreamProductsState extends State<StreamProducts> {
 
                   //price
                   Text(
-                      funct.priceConvert(bd.products[index].price)
+                      funct.priceConvert(bd.products[index].price),
+                      style:TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w600
+                      )
                   ),
+
+                  SizedBox(height: 10),
 
                   //buttons
                   BuyButton(
