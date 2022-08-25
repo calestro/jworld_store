@@ -1,16 +1,11 @@
-# mobile_j_world
+<h1>J-World</h1>
 
-A new Flutter project.
+Mini Project, the flutter Multi-Screen
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Trying to improve my skills in pure flutter.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I'm not using any library like Get X or Mob x and others, I want to see how far I can go using just Bus event and Singletoon
