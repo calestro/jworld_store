@@ -13,6 +13,6 @@ I'm not using any library like Get X or Mob x and others, I want to see how far 
 47.8% completed
 
 <p align="center">
-  <img src="img/readme.png" width="350" title="hover text">
+  <img src="img/readme.png" width="350" title="now state">
 </p>
 
