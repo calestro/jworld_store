@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/cart_page/components/cart_quantity.dart';
+import 'package:mobile_j_world/activy/cart_page/style.dart';
 import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
@@ -21,7 +23,7 @@ class _CartPageState extends State<CartPage> {
     FakeBd bd = FakeBd();
     MyFunctions funct = MyFunctions();
     double hg = MediaQuery.of(context).size.height;
-
+    bd.myCart.removeWhere((element) => element.qtd == 0);
 
 
 
@@ -45,7 +47,6 @@ class _CartPageState extends State<CartPage> {
               shrinkWrap: true,
               itemCount: bd.myCart.length,
               itemBuilder: (context, index){
-                print(bd.myCart.length);
 
                 return Stack(
                   children: [
@@ -53,9 +54,10 @@ class _CartPageState extends State<CartPage> {
                       padding: EdgeInsets.only(top: 5, left: 10, right: 10),
                       child: Container(
                         width: double.maxFinite,
-                        height: 120,
+                        height: 180,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
+                          color:Colors.grey.withOpacity(0.05),
                           border: Border.all(color: Colors.black54.withOpacity(0.1)),
                           borderRadius: BorderRadius.all(Radius.circular(20))
                         ),
@@ -65,13 +67,19 @@ class _CartPageState extends State<CartPage> {
                             Expanded(
                               flex: 2,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(bd.myCart[index].product.name),
-                                  Text(bd.myCart[index].qtd.toString()),
-                                  Text(bd.myCart[index].size),
-                                  Text(funct.priceConvert(bd.myCart[index].product.price)),
+                                  Text(bd.myCart[index].product.name, style: CartStyle().titleCart,),
+
+                                  Text("Tamanho: "+ bd.myCart[index].size),
+
+                                  QuantityCart(
+                                      index: index,
+                                      update:(){setState(() {widget.update();});}),
+
+                                  Text("Total: " + funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd)),
                                 ],
                               ),
                             ),
@@ -94,7 +102,6 @@ class _CartPageState extends State<CartPage> {
                             onPressed: (){
                               bd.myCart.removeAt(index);
                               setState(() {});
-                              widget.update();
                               },
                             icon: Icon(Icons.close))),
                   ],
@@ -133,4 +140,5 @@ class _CartPageState extends State<CartPage> {
       ),
     );
   }
+
 }

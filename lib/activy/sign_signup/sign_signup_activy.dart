@@ -13,6 +13,7 @@ class SignPage extends StatefulWidget {
 class _SignPageState extends State<SignPage> {
   @override
   Widget build(BuildContext context) {
+
     TextEditingController controller = TextEditingController();
     double wd = MediaQuery.of(context).size.width;
     double hg = MediaQuery.of(context).size.height;
@@ -45,7 +46,7 @@ class _SignPageState extends State<SignPage> {
 
 
             Positioned(
-              bottom: hg * .12,
+              bottom:50,
               child: SizedBox(
                 width: wd,
                 height: hg/3,

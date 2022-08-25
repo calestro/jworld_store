@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
-import 'package:mobile_j_world/fake_bd/helper/products.dart';
+
 
 
 class MyFunctions{
@@ -13,13 +13,10 @@ class MyFunctions{
 
   insertCart(snapshot,index){
     bool isExist = false;
-     int listIndex = 0;
-     int i = 0;
     bd.myCart.forEach((element) {
-      i++;
-     isExist = element.product == snapshot && element.size == send.size[index];
-     if(isExist){
+     if(element.product == snapshot && element.size == send.size[index]){
        element.qtd++;
+       isExist = true;
      }
 
    });
