@@ -4,7 +4,7 @@ class CustomBackground extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint();
-    paint.color = Colors.red;
+    paint.color = Colors.red.shade800;
 
     Path path = Path();
     double w = size.width;

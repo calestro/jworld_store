@@ -9,7 +9,7 @@ void main(){
   WidgetsFlutterBinding.ensureInitialized();
   Wakelock.enable();
   runApp(MaterialApp(
-    home:MaintenceView(),
+    home:const MaintenceView(),
     theme:ThemeData(
       colorScheme: ThemeData().colorScheme.copyWith(
     primary: Colors.red,

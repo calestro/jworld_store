@@ -16,10 +16,10 @@ class SignForm extends StatelessWidget {
       fillColor: Colors.white,
       filled: true,
       hintText: label,
-      border: OutlineInputBorder(
+      border: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(30)),
       ),
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: Colors.redAccent,
           style: BorderStyle.solid,
@@ -36,7 +36,7 @@ class SignForm extends StatelessWidget {
 
 
 
-    return Container(
+    return SizedBox(
       width: size,
       child: TextField(
         controller: controller,

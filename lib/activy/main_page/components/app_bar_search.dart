@@ -16,9 +16,9 @@ class AppBarSearch extends StatelessWidget {
     int badge = 0;
     FakeBd bd = FakeBd();
     TextEditingController searchController = TextEditingController();
-    bd.myCart.forEach((element) {
+    for (var element in bd.myCart) {
       badge = badge + element.qtd;
-    });
+    }
     return Container(
       color: Colors.red,
       width: MediaQuery.of(context).size.width,
@@ -27,13 +27,13 @@ class AppBarSearch extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.8,
             height: 50,
             child: TextField(
               controller: searchController,
               cursorColor: Colors.black,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
               decoration: MainAppStyle().inputStyle,
@@ -42,7 +42,7 @@ class AppBarSearch extends StatelessWidget {
 
           Badge(
             badgeContent: Text(badge.toString(),
-              style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
+              style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
             position: const BadgePosition(start: 40, bottom: 30),
             showBadge: bd.myCart.isEmpty ? false : true,
             badgeColor: Colors.redAccent,
@@ -59,7 +59,7 @@ class AppBarSearch extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          GlobalData().isMobile ? SizedBox(): SizedBox(
+          GlobalData().isMobile ? const SizedBox(): SizedBox(
             child: Container(
               width: 100,
               height: 40,

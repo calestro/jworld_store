@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MainAppStyle {
 
   // Box Decoration
-  final InputDecoration inputStyle = InputDecoration(
+  final InputDecoration inputStyle = const InputDecoration(
     filled: true,
     fillColor: Colors.white,
     hintText: "Procurar...",
@@ -39,46 +39,46 @@ class MainAppStyle {
   );
 
   final BoxDecoration menuCategory = BoxDecoration(
-      color: Color(0xfff11111).withOpacity(0.8),
-      borderRadius: BorderRadius.only(
+      color: const Color(0xfff11111).withOpacity(0.8),
+      borderRadius: const BorderRadius.only(
         topLeft:Radius.circular(20) ,
         topRight:Radius.circular(14),
         bottomLeft:Radius.circular(14),
         bottomRight:Radius.circular(20),
       ),
       border: Border(
-        top:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
-        left:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
-        right:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
-        bottom:BorderSide(color: Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid,),
+        top:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        left:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        right:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        bottom:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid,),
       )
   );
 
   final BoxDecoration tileProducts = BoxDecoration(
-    color: Color(0xfff4e7e7).withOpacity(0.5),
-    borderRadius: BorderRadius.vertical(
+    color: const Color(0xfff4e7e7).withOpacity(0.5),
+    borderRadius: const BorderRadius.vertical(
         top: Radius.elliptical(25, 25),
         bottom: Radius.elliptical(25, 25)
     ),
     border: Border(
-      top:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
-      bottom:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
-      left:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
-      right:BorderSide(width: 3,color: Color(0xfff4e7e7).withOpacity(0.2)),
+      top:BorderSide(width: 3,color: const Color(0xfff4e7e7).withOpacity(0.2)),
+      bottom:BorderSide(width: 3,color: const Color(0xfff4e7e7).withOpacity(0.2)),
+      left:BorderSide(width: 3,color: const Color(0xfff4e7e7).withOpacity(0.2)),
+      right:BorderSide(width: 3,color: const Color(0xfff4e7e7).withOpacity(0.2)),
     ),
   );
 
   //TextStyle
-  final TextStyle textMenuCategory = TextStyle(
+  final TextStyle textMenuCategory = const TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
 
-  final TextStyle textProductName = TextStyle(
+  final TextStyle textProductName = const TextStyle(
     fontWeight: FontWeight.bold,
   );
-final TextStyle textPrice = TextStyle(
+final TextStyle textPrice = const TextStyle(
     fontWeight: FontWeight.bold,
   );
 

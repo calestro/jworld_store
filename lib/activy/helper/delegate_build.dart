@@ -10,17 +10,15 @@ DelegateClass({required this.child, required this.childPinned});
       BuildContext context, double shrinkOffset, bool overlapsContent) {
       isSize = 9 > shrinkOffset ;
       if(isSize) {
-        return Container(
-          child: Column(
-            children: [
-              childPinned,
-              Container(
-                  alignment: Alignment.center,
-                color: Colors.white,
-                  child: child
-              ),
-            ],
-          ),
+        return Column(
+          children: [
+            childPinned,
+            Container(
+                alignment: Alignment.center,
+              color: Colors.white,
+                child: child
+            ),
+          ],
         );
       }
       else{

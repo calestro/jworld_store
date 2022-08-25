@@ -10,7 +10,7 @@ import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
 class StreamProducts extends StatefulWidget {
-  final update;
+  final Function update;
 
   const StreamProducts({Key? key, required this.update}) : super(key: key);
 
@@ -23,12 +23,11 @@ class _StreamProductsState extends State<StreamProducts> {
   Widget build(BuildContext context) {
 
     FakeBd bd = FakeBd();
-    final double wd = MediaQuery.of(context).size.width;
     MyFunctions funct = MyFunctions();
     return GridView.builder(
       itemCount: bd.products.length,
-        padding: EdgeInsets.only(top: 15),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        padding: const EdgeInsets.only(top: 15),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
           mainAxisExtent: 360,
           mainAxisSpacing: 10,
@@ -39,7 +38,7 @@ class _StreamProductsState extends State<StreamProducts> {
         return GestureDetector(
             onTap: (){},
             child: Container(
-              margin: EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 10),
               decoration:MainAppStyle().tileProducts,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -69,13 +68,13 @@ class _StreamProductsState extends State<StreamProducts> {
                   //price
                   Text(
                       funct.priceConvert(bd.products[index].price),
-                      style:TextStyle(
+                      style:const TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w600
                       )
                   ),
 
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
 
                   //buttons
                   BuyButton(

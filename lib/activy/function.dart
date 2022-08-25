@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
 import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
@@ -13,13 +12,13 @@ class MyFunctions{
 
   insertCart(snapshot,index){
     bool isExist = false;
-    bd.myCart.forEach((element) {
+    for (var element in bd.myCart) {
      if(element.product == snapshot && element.size == send.size[index]){
        element.qtd++;
        isExist = true;
      }
 
-   });
+   }
     if(!isExist) {
       bd.myCart.add(
           MyCartHelper(snapshot, send.qtd[index]!, send.size[index]!));
@@ -37,7 +36,7 @@ class MyFunctions{
   }
   String priceConvert (double price) {
     String stringPrice = price.toStringAsFixed(2);
-    stringPrice = "R\$ " + stringPrice.replaceAll(".", ",");
+    stringPrice = "R\$ ${stringPrice.replaceAll(".", ",")}";
     return stringPrice;
   }
 

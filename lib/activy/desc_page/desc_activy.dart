@@ -8,7 +8,7 @@ class DescActivy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("J- world"),
+        title: const Text("J- world"),
       ),
     );
   }

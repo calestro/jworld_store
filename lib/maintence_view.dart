@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/global_data.dart';
-import 'package:wakelock/wakelock.dart';
 
 import 'activy/main_page/main_page.dart';
 
@@ -27,6 +26,6 @@ class _MaintenceViewState extends State<MaintenceView> {
   }
 
 
-    return MainPage();
+    return const MainPage();
   }
 }

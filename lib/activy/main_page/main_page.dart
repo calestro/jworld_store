@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:mobile_j_world/activy/main_page/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/main_page/components/category_menu.dart';
 import 'package:mobile_j_world/activy/helper/delegate_build.dart';
@@ -21,7 +20,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    GlobalData data = GlobalData();
     return Stack(
       children: [
         Scaffold(
@@ -38,11 +36,11 @@ class _MainPageState extends State<MainPage> {
                   //mobile
                   leading: GlobalData().isMobile ? Container(
                     alignment: Alignment.topLeft,
-                    margin: EdgeInsets.all(11),
+                    margin: const EdgeInsets.all(11),
                     child: GestureDetector(
-                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> SignPage()));
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignPage()));
                       },
-                        child: Icon(Icons.menu, size: 40,)
+                        child: const Icon(Icons.menu, size: 40,)
                     ),
                   ): null,
 
@@ -55,7 +53,7 @@ class _MainPageState extends State<MainPage> {
                     floating: true,
                     delegate: DelegateClass(
                       childPinned:AppBarSearch(update: update),
-                      child:CategoryMenu(),
+                      child:const CategoryMenu(),
                     )
                 ),
               ];

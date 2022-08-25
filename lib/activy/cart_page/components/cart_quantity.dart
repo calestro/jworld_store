@@ -43,7 +43,7 @@ class _QuantityCartState extends State<QuantityCart> {
             bd.myCart[widget.index].qtd = qtd;
             setState(() {widget.update();});
             },
-          icon: Icon(Icons.arrow_back_ios, size: 10,),
+          icon: const Icon(Icons.arrow_back_ios, size: 10,),
         ),
         Container(
           width: 50,
@@ -53,12 +53,12 @@ class _QuantityCartState extends State<QuantityCart> {
             controller: controller,
             enabled: false,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
             ),
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-                label: Text("QTD", style: TextStyle(fontSize: 10),),
+                label: const Text("QTD", style: TextStyle(fontSize: 10),),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide.none
@@ -77,7 +77,7 @@ class _QuantityCartState extends State<QuantityCart> {
             bd.myCart[widget.index].qtd = qtd;
             setState(() {widget.update();});
           },
-          icon: Icon(Icons.arrow_forward_ios, size: 10,),
+          icon: const Icon(Icons.arrow_forward_ios, size: 10,),
         ),
 
       ],

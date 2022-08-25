@@ -40,7 +40,7 @@ class _QuantityState extends State<Quantity> {
               send.qtd.addAll({widget.indexStream:qtd});
               setState(() {});
             },
-            icon: Icon(Icons.arrow_back_ios, size: 10,),
+            icon: const Icon(Icons.arrow_back_ios, size: 10,),
         ),
         Container(
           width: 50,
@@ -49,12 +49,12 @@ class _QuantityState extends State<Quantity> {
           child: TextFormField(
             controller: controller,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
             ),
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-              label: Text("QTD", style: TextStyle(fontSize: 10),),
+              label: const Text("QTD", style: TextStyle(fontSize: 10),),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide.none
@@ -73,7 +73,7 @@ class _QuantityState extends State<Quantity> {
             setState(() {});
             send.qtd.addAll({widget.indexStream:qtd});
           },
-          icon: Icon(Icons.arrow_forward_ios, size: 10,),
+          icon: const Icon(Icons.arrow_forward_ios, size: 10,),
         ),
 
       ],

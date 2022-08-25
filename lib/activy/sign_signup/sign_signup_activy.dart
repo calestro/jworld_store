@@ -19,7 +19,7 @@ class _SignPageState extends State<SignPage> {
     double hg = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        color: Colors.red.shade900,
+        color: Colors.red.shade600,
         padding: MediaQuery.of(context).padding,
         child: Stack(
           children: [
@@ -31,7 +31,7 @@ class _SignPageState extends State<SignPage> {
               height: double.maxFinite,
               color: Colors.black.withOpacity(0.2),
             ),
-            Container(
+            SizedBox(
               width: double.maxFinite,
               height: double.maxFinite,
               child: CustomPaint(
@@ -58,9 +58,9 @@ class _SignPageState extends State<SignPage> {
                     SignForm(size: wd * 0.7, controller: controller, label: "Senha"),
                     ElevatedButton(
                         onPressed:(){},
-                        child: Text("Login")
+                        child: const Text("Login")
                     ),
-                    Text("Esqueceu a senha ?", style: TextStyle(color: Colors.white),)
+                    const Text("Esqueceu a senha ?", style: TextStyle(color: Colors.white),)
 
                   ],
                 ),

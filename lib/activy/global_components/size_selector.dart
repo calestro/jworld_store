@@ -5,7 +5,7 @@ class SizeSelector extends StatefulWidget {
   final List<String> sizes;
   final int indexStream;
   final Function update;
-  SizeSelector(
+  const SizeSelector(
       {Key? key, required this.sizes, required this.update, required this.indexStream})
       : super(key: key);
 
@@ -20,7 +20,6 @@ class _SizeSelectorState extends State<SizeSelector> {
   void initState() {
     selectedSize = widget.sizes[0];
     send.size.addAll({widget.indexStream:selectedSize});
-    print("chamou");
     super.initState();
   }
   @override
@@ -49,8 +48,8 @@ class _SizeSelectorState extends State<SizeSelector> {
                   width: 30,
                   decoration: BoxDecoration(
                       color: selectedSize == widget.sizes[index]
-                          ? Color(0xFF667EEA)
-                          : Color(0xFFF3F3F3),
+                          ? Colors.red
+                          : const Color(0xFFF3F3F3),
                       borderRadius: BorderRadius.circular(3)),
                   child: Align(
                     alignment: Alignment.center,

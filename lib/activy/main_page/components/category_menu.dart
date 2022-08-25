@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/main_page/style.dart';
 
@@ -24,7 +23,7 @@ class CategoryMenu extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index){
                     return Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           top: 10,
                           right:28,
                           left:5,
