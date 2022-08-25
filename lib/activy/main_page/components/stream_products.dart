@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/desc_page/desc_activy.dart';
 import 'package:mobile_j_world/activy/global_components/buy_button.dart';
 import 'package:mobile_j_world/activy/global_components/quantity.dart';
 import 'package:mobile_j_world/activy/global_components/size_selector.dart';
@@ -36,7 +37,14 @@ class _StreamProductsState extends State<StreamProducts> {
       itemBuilder: (context,index){
 
         return GestureDetector(
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=>DescActivy(
+                    product: bd.products[index],
+                    update:(){setState(() {});},
+                    index: index,
+                  )));
+            },
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
               decoration:MainAppStyle().tileProducts,

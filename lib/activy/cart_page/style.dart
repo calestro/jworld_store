@@ -24,7 +24,6 @@ class CartStyle{
   );
   
   //Box
-
   final BoxDecoration boxSize = const BoxDecoration(
       color: Colors.red,
       borderRadius: BorderRadius.all(Radius.circular(20))

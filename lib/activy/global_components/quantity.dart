@@ -3,8 +3,9 @@ import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 
 class Quantity extends StatefulWidget {
   final int indexStream;
-
-  const Quantity({Key? key, required this.indexStream}) : super(key: key);
+  double wd;
+  double hg;
+  Quantity({Key? key, required this.indexStream, this.wd = 50, this.hg = 20}) : super(key: key);
 
   @override
   State<Quantity> createState() => _QuantityState();
@@ -43,18 +44,18 @@ class _QuantityState extends State<Quantity> {
             icon: const Icon(Icons.arrow_back_ios, size: 10,),
         ),
         Container(
-          width: 50,
-          height: 20,
+          width: widget.wd,
+          height: widget.hg,
           color: Colors.transparent,
           child: TextFormField(
             controller: controller,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 12,
+            style:TextStyle(
+              fontSize: widget.wd < 52 ? 12 : 16,
             ),
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-              label: const Text("QTD", style: TextStyle(fontSize: 10),),
+              label: Text("QTD", style: TextStyle(fontSize:widget.wd < 52 ? 10 : 14, ),),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide.none
