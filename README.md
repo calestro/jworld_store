@@ -12,5 +12,7 @@ I'm not using any library like Get X or Mob x and others, I want to see how far 
 
 47.8% completed
 
-![alt text]([https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png](https://github.com/calestro/jworld_store/blob/main/img/readme.png))
+<p align="center">
+  <img src="img/readme.png" width="350" title="hover text">
+</p>
 
