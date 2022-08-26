@@ -7,6 +7,9 @@ import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
+import '../../custom_routes.dart';
+import '../tag_hero.dart';
+
 
 
 
@@ -22,7 +25,6 @@ class StreamProducts extends StatefulWidget {
 class _StreamProductsState extends State<StreamProducts> {
   @override
   Widget build(BuildContext context) {
-
     FakeBd bd = FakeBd();
     MyFunctions funct = MyFunctions();
     return GridView.builder(
@@ -38,12 +40,13 @@ class _StreamProductsState extends State<StreamProducts> {
 
         return GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context)=>DescActivy(
-                    product: bd.products[index],
-                    update:(){setState(() {widget.update();});},
-                    index: index,
-                  )));
+              Navigator.of(context).push(CustomRoute(
+                child:DescActivy(
+                  product: bd.products[index],
+                  update:(){setState(() {widget.update();});},
+                  index: index,
+                ),
+              ));
             },
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
@@ -53,8 +56,11 @@ class _StreamProductsState extends State<StreamProducts> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children:[
                   //Image
-                 Image.asset(
-                   bd.products[index].image[0],width: 120,
+                 Hero(
+                   tag: TagHero.imageProduct(bd.products[index].image[0],index),
+                   child: Image.asset(
+                     bd.products[index].image[0],width: 120,
+                   ),
                  ),
                   //text
                   Text(

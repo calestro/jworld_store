@@ -4,8 +4,11 @@ import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/activy/global_components/buy_button.dart';
 import 'package:mobile_j_world/activy/global_components/quantity.dart';
 import 'package:mobile_j_world/activy/global_components/size_selector.dart';
+import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 import 'package:mobile_j_world/fake_bd/helper/products.dart';
 import 'package:mobile_j_world/global_data.dart';
+
+import '../main_page/tag_hero.dart';
 
 
 class DescActivy extends StatelessWidget {
@@ -21,6 +24,7 @@ class DescActivy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
+    FakeBd bd = FakeBd();
     final MyFunctions funct = MyFunctions();
     return Scaffold(
       appBar: AppBar(
@@ -43,7 +47,9 @@ class DescActivy extends StatelessWidget {
                      child: Container(
                        padding: const EdgeInsets.all(5),
                          decoration: DescStyle().image,
-                         child: Image.asset(product.image[0], scale: 7,)
+                         child: Hero(
+                             tag: TagHero.imageProduct(product.image[0],index),
+                             child: Image.asset(product.image[0], scale: 7,))
                      ),
                    ),
                    const SizedBox(height:20),
