@@ -10,7 +10,7 @@ Trying to improve my skills in pure flutter.
 
 I'm not using any library like Get X or Mob x and others, I want to see how far I can go using just Bus event and Singletoon
 
-47.8% completed
+49.1% completed
 
 <p align="center">
   <img src="img/readme.png" width="350" title="now state">
