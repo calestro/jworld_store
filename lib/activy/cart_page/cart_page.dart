@@ -41,87 +41,88 @@ class _CartPageState extends State<CartPage> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          SizedBox(
-            height: hg * 0.65,
-            child: bd.myCart.isEmpty ?
+          bd.myCart.isEmpty ?
             const Center(
               child: Text("Ainda não tem nenhum produto", style:TextStyle( fontSize:15),),
             )
                 :
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: bd.myCart.length,
-              itemBuilder: (context, index){
-                return Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
-                      child: Container(
-                        width: double.maxFinite,
-                        height: 142,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color:Colors.grey.withOpacity(0.05),
-                          border: Border.all(color: Colors.black54.withOpacity(0.1)),
-                          borderRadius: const BorderRadius.all(Radius.circular(20))
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              flex: 2,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(bd.myCart[index].product.name, style: style.titleCart,),
-
-                                  QuantityCart(
-                                      index: index,
-                                      update:(){setState(() {widget.update();});}),
-
-                                  Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
-                                    style: style.price,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
+            SizedBox(
+              height: hg * .8,
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: bd.myCart.length,
+                itemBuilder: (context, index){
+                  return Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
+                        child: Container(
+                          width: double.maxFinite,
+                          height: 142,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color:Colors.grey.withOpacity(0.05),
+                            border: Border.all(color: Colors.black54.withOpacity(0.1)),
+                            borderRadius: const BorderRadius.all(Radius.circular(20))
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 2,
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Image.asset(bd.myCart[index].product.image[0], width:70),
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 21,
-                                      height: 21,
-                                      decoration: style.boxSize,
-                                      child: Text(bd.myCart[index].size,
-                                        textAlign: TextAlign.center,
-                                        style: style.sizeText,),
-                                    )
+                                    Text(bd.myCart[index].product.name, style: style.titleCart,),
+
+                                    QuantityCart(
+                                        index: index,
+                                        update:(){setState(() {widget.update();});}),
+
+                                    Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
+                                      style: style.price,
+                                    ),
                                   ],
-                                )
-                            )
-                          ],
-                        )
+                                ),
+                              ),
+                              Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Image.asset(bd.myCart[index].product.image[0], width:70),
+                                      Container(
+                                        alignment: Alignment.center,
+                                        width: 21,
+                                        height: 21,
+                                        decoration: style.boxSize,
+                                        child: Text(bd.myCart[index].size,
+                                          textAlign: TextAlign.center,
+                                          style: style.sizeText,),
+                                      )
+                                    ],
+                                  )
+                              )
+                            ],
+                          )
+                        ),
                       ),
-                    ),
-                    Positioned(
-                        top:0,
-                        right: 5,
-                        child: IconButton(
-                            onPressed: (){
-                              bd.myCart.removeAt(index); //icone que remove o item
-                              setState(() {widget.update();});
-                              },
-                            icon: const Icon(Icons.close))),
-                  ],
-                );
-              },
+                      Positioned(
+                          top:0,
+                          right: 5,
+                          child: IconButton(
+                              onPressed: (){
+                                bd.myCart.removeAt(index); //icone que remove o item
+                                setState(() {widget.update();});
+                                },
+                              icon: const Icon(Icons.close))),
+                    ],
+                  );
+                },
+              ),
             ),
-          ),
         ],
       ),
       bottomNavigationBar: Container(
