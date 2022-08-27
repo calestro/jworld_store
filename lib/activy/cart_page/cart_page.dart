@@ -52,7 +52,6 @@ class _CartPageState extends State<CartPage> {
               shrinkWrap: true,
               itemCount: bd.myCart.length,
               itemBuilder: (context, index){
-
                 return Stack(
                   children: [
                     Padding(
@@ -123,38 +122,34 @@ class _CartPageState extends State<CartPage> {
               },
             ),
           ),
-          SizedBox(height: hg * 0.148652),
-
-          Container(
-            height: hg * 0.07,
-            width: double.maxFinite,
-            color: Colors.red.shade700,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Text(bd.myCart.isEmpty ? "R\$ 0,00" :
-                  funct.priceConvert(total),
-                      textAlign: TextAlign.center,
-                      style:style.allTotal
-                  ),
-                ),
-                Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: ElevatedButton(
-                          onPressed: (){},
-                          child: const Text("Continuar")),
-                    ))
-
-              ],
-            ),
-          ),
-
-
-
         ],
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.red.shade500,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(bd.myCart.isEmpty ? "R\$ 0,00" :
+              funct.priceConvert(total),
+                  textAlign: TextAlign.center,
+                  style:style.allTotal
+              ),
+            ),
+            Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.red.shade900)
+                    ),
+                      onPressed: (){},
+                      child: const Text("Continuar")),
+                ))
+
+          ],
+        ),
       ),
     );
   }
