@@ -47,7 +47,8 @@ class _CartPageState extends State<CartPage> {
             )
                 :
             SizedBox(
-              height: hg * .8,
+              height: hg - MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom - 120,
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
