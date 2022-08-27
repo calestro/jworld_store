@@ -25,8 +25,7 @@ class _SizeSelectorState extends State<SizeSelector> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
+      mainAxisSize: MainAxisSize.min,
       children: List.generate(
           widget.sizes.length,
               (index) {

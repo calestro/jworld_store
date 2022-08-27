@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/cart_page/cart_page.dart';
+import 'package:mobile_j_world/activy/global_components/Cart_animated.dart';
 import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/global_data.dart';
 
@@ -39,23 +40,7 @@ class AppBarSearch extends StatelessWidget {
               decoration: MainAppStyle().inputStyle,
             ),
           ),
-
-          Badge(
-            badgeContent: Text(badge.toString(),
-              style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
-            position: const BadgePosition(start: 40, bottom: 30),
-            showBadge: bd.myCart.isEmpty ? false : true,
-            badgeColor: Colors.redAccent,
-            child: IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CartPage(update:update)));
-              },
-              icon: const Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
-            ),
-          ),
+          CartAnimated(update: update),
           const SizedBox(
             width: 10,
           ),

@@ -35,8 +35,8 @@ class _QuantityState extends State<Quantity> {
     controller.text = qtd.toString();
 
     return Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         IconButton(
             onPressed:(){

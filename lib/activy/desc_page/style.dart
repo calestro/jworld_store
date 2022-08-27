@@ -11,7 +11,7 @@ class DescStyle{
   final TextStyle price = const TextStyle(
       fontSize: 23,
       fontWeight: FontWeight.w700,
-      color: Colors.black
+      color: Colors.white
   );
 
   final BoxDecoration image = const BoxDecoration(
@@ -34,6 +34,11 @@ class DescStyle{
       right:BorderSide(color: Colors.redAccent, width: 1),
       bottom:BorderSide(color: Colors.redAccent, width: 1),
     ),
+  );
+
+  final BoxDecoration priceContainer = BoxDecoration(
+    color: Colors.red,
+    borderRadius: BorderRadius.all(Radius.circular(60)),
   );
 
 
