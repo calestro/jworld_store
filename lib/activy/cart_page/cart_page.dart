@@ -51,7 +51,7 @@ class _CartPageState extends State<CartPage> {
                   MediaQuery.of(context).padding.bottom - 120,
               child: ListView.builder(
                 shrinkWrap: true,
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 itemCount: bd.myCart.length,
                 itemBuilder: (context, index){
                   return Stack(

@@ -30,7 +30,7 @@ class _SizeSelectorState extends State<SizeSelector> {
           widget.sizes.length,
               (index) {
                 return Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.only(left: 5, right: 5),
             child: Material(
               child: InkWell(
                 borderRadius: BorderRadius.circular(3),

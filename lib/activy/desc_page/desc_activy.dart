@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/desc_page/components/slider.dart';
 import 'package:mobile_j_world/activy/desc_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
-import 'package:mobile_j_world/activy/global_components/Cart_animated.dart';
+import 'package:mobile_j_world/activy/global_components/cart_animated.dart';
 import 'package:mobile_j_world/activy/global_components/buy_button.dart';
 import 'package:mobile_j_world/activy/global_components/quantity.dart';
 import 'package:mobile_j_world/activy/global_components/size_selector.dart';
-import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 import 'package:mobile_j_world/fake_bd/helper/products.dart';
 import 'package:mobile_j_world/global_data.dart';
 
@@ -30,7 +30,6 @@ class _DescActivyState extends State<DescActivy> {
   @override
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
-    final double hg = MediaQuery.of(context).size.height;
     final MyFunctions funct = MyFunctions();
     return Scaffold(
       appBar: AppBar(
@@ -39,7 +38,7 @@ class _DescActivyState extends State<DescActivy> {
         toolbarHeight: 60,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             child: CartAnimated(update: (){setState(() {widget.update();});}),
           )
         ],
@@ -54,7 +53,7 @@ class _DescActivyState extends State<DescActivy> {
                  mainAxisSize: MainAxisSize.max,
                  children: [
                    Container(
-                     width: wd * .75,
+                     width: wd,
                     padding: const EdgeInsets.all(5),
                      decoration: DescStyle().imageBack,
                      child: Container(
@@ -62,7 +61,7 @@ class _DescActivyState extends State<DescActivy> {
                          decoration: DescStyle().image,
                          child: Hero(
                              tag: TagHero.imageProduct(widget.product.image[0],widget.index),
-                             child: Image.asset(widget.product.image[0], scale: 7,))
+                             child:CarrouselSlider(imgList:widget.product.image))
                      ),
                    ),
                    const SizedBox(height:20),
@@ -71,17 +70,17 @@ class _DescActivyState extends State<DescActivy> {
                    Text(widget.product.description, textAlign: TextAlign.center,),
                    const SizedBox(height:40),
                    Row(
-                     crossAxisAlignment: CrossAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
                        Expanded(
                          flex: 1,
                          child: Column(
                            mainAxisAlignment: MainAxisAlignment.start,
-                           mainAxisSize: MainAxisSize.max,
+                           mainAxisSize: MainAxisSize.min,
                            children: [
                              SizeSelector(sizes:funct.sizeTolist(widget.index), update: widget.update, indexStream: widget.index),
                              const SizedBox(height:20),
-                             Quantity(indexStream: widget.index, hg: 40, wd: 55,),
+                             Quantity(indexStream: widget.index, hg: 48, wd: 55,),
                              const SizedBox(height:20),
                            ],
                          ),
@@ -89,12 +88,18 @@ class _DescActivyState extends State<DescActivy> {
                        Expanded(
                          flex: 1,
                            child: Padding(
-                             padding: EdgeInsets.only(top: 10),
+                             padding: EdgeInsets.only(bottom: 28, left: 10, right: 10),
                              child: Container(
-                                 height: 80,
-                                 alignment: Alignment.center,
-                                 decoration: DescStyle().priceContainer,
-                                 child: Text(funct.priceConvert(widget.product.price), style: DescStyle().price,)),
+                               padding: EdgeInsets.all(3),
+                               decoration: DescStyle().priceContainerBack,
+                               child: Container(
+                                    padding: EdgeInsets.all(3),
+                                   alignment: Alignment.center,
+                                   decoration: DescStyle().priceContainer,
+                                   child: Text(funct.priceConvert(widget.product.price),
+                                     style: DescStyle().price,)
+                               ),
+                             ),
                            )),
                        const SizedBox(height:20),
                      ],

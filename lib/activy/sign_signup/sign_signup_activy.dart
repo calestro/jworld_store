@@ -18,6 +18,7 @@ class _SignPageState extends State<SignPage> {
     double wd = MediaQuery.of(context).size.width;
     double hg = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.red.shade600,
         padding: MediaQuery.of(context).padding,
@@ -46,7 +47,7 @@ class _SignPageState extends State<SignPage> {
 
 
             Positioned(
-              bottom:50,
+              top:250,
               child: SizedBox(
                 width: wd,
                 height: hg/3,

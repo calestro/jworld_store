@@ -31,7 +31,7 @@ class _BuyButtonState extends State<BuyButton> {
         onTap:(){
           setState(() {isPressed = true;});
           funct.insertCart(widget.snapshot, widget.index);
-          Timer(Duration(milliseconds: 1000), ()=> setState(() {isPressed = false;}));
+          Timer(const Duration(milliseconds: 1000), ()=> setState(() {isPressed = false;}));
           widget.update();
           },
         child: Container(
@@ -40,13 +40,13 @@ class _BuyButtonState extends State<BuyButton> {
           height: widget.hg,
           decoration: BoxDecoration(
             color:isPressed ? Colors.green : Colors.red,
-            borderRadius: widget.isRadius ? BorderRadius.all(Radius.circular(12)) : null,
+            borderRadius: widget.isRadius ? const BorderRadius.all(Radius.circular(12)) : null,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
               Icon(Icons.shopping_cart_outlined,color: Colors.white,size: isPressed ? 30 : 25,),
-              isPressed ? Container() : Text("COMPRAR", style: TextStyle(color: Colors.white),)
+              isPressed ? Container() : const Text("COMPRAR", style: TextStyle(color: Colors.white),)
             ],
           ),
         ),

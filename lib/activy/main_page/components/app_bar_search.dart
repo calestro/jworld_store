@@ -1,7 +1,5 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/cart_page/cart_page.dart';
-import 'package:mobile_j_world/activy/global_components/Cart_animated.dart';
+import 'package:mobile_j_world/activy/global_components/cart_animated.dart';
 import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/global_data.dart';
 

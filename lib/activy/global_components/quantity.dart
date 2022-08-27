@@ -37,6 +37,7 @@ class _QuantityState extends State<Quantity> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconButton(
             onPressed:(){
@@ -45,13 +46,14 @@ class _QuantityState extends State<Quantity> {
               send.qtd.addAll({widget.indexStream:qtd});
               setState(() {});
             },
-            icon: const Icon(Icons.arrow_back_ios, size: 10,),
+            icon: const Icon(Icons.arrow_back_ios, size: 16,),
         ),
         Container(
           width: widget.wd,
           height: widget.hg,
           color: Colors.transparent,
           child: TextFormField(
+            enabled: false,
             controller: controller,
             textAlign: TextAlign.center,
             style:TextStyle(
@@ -64,9 +66,6 @@ class _QuantityState extends State<Quantity> {
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide.none
             ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(3),
-              )
             ),
           ),
         ),
@@ -78,7 +77,7 @@ class _QuantityState extends State<Quantity> {
             setState(() {});
             send.qtd.addAll({widget.indexStream:qtd});
           },
-          icon: const Icon(Icons.arrow_forward_ios, size: 10,),
+          icon: const Icon(Icons.arrow_forward_ios, size: 16,),
         ),
 
       ],

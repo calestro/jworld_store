@@ -13,7 +13,7 @@ class CustomRoute extends PageRouteBuilder {
         return child;
       }
     },
-    transitionDuration: Duration(milliseconds: 1000),
-    reverseTransitionDuration: Duration(milliseconds: 1000),
+    transitionDuration: const Duration(milliseconds: 1000),
+    reverseTransitionDuration: const Duration(milliseconds: 1000),
   );
 }
