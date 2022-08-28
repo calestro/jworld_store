@@ -88,12 +88,12 @@ class _DescActivyState extends State<DescActivy> {
                        Expanded(
                          flex: 1,
                            child: Padding(
-                             padding: EdgeInsets.only(bottom: 28, left: 10, right: 10),
+                             padding: const EdgeInsets.only(bottom: 28, left: 10, right: 10),
                              child: Container(
-                               padding: EdgeInsets.all(3),
+                               padding: const EdgeInsets.all(3),
                                decoration: DescStyle().priceContainerBack,
                                child: Container(
-                                    padding: EdgeInsets.all(3),
+                                    padding: const EdgeInsets.all(3),
                                    alignment: Alignment.center,
                                    decoration: DescStyle().priceContainer,
                                    child: Text(funct.priceConvert(widget.product.price),

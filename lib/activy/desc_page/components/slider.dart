@@ -25,14 +25,14 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
     final double hg = MediaQuery.of(context).size.height;
     final List<Widget> imageSliders = imgList
         .map((item) => Container(
-      margin: EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(15.0),
       child: Image.asset(item, fit: BoxFit.fitWidth, width: 1000.0),
     ))
         .toList();
 
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: hg * 0.45,
           child: Stack(
               children: [
@@ -61,7 +61,7 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
                       child: Container(
                         width: 12.0,
                         height: 12.0,
-                        margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: (Theme.of(context).brightness == Brightness.dark

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 
+// ignore: must_be_immutable
 class Quantity extends StatefulWidget {
   final int indexStream;
   double wd;

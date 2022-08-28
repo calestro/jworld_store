@@ -5,6 +5,7 @@ import 'package:mobile_j_world/activy/function.dart';
 import '../../fake_bd/helper/products.dart';
 
 
+// ignore: must_be_immutable
 class BuyButton extends StatefulWidget {
   final ProductsBd snapshot;
   final Function update;

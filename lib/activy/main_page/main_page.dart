@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/main_page/components/Drawer.dart';
+import 'package:mobile_j_world/activy/main_page/components/drawer.dart';
 import 'package:mobile_j_world/activy/main_page/components/app_bar_search.dart';
 import 'package:mobile_j_world/activy/main_page/components/category_menu.dart';
 import 'package:mobile_j_world/activy/helper/delegate_build.dart';
 import 'package:mobile_j_world/activy/main_page/components/stream_products.dart';
-import 'package:mobile_j_world/activy/sign_signup/sign_signup_activy.dart';
 import 'package:mobile_j_world/global_data.dart';
 
 
@@ -21,12 +20,12 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _keyDrawer = GlobalKey();
+    final GlobalKey<ScaffoldState> keyDrawer = GlobalKey();
     return Stack(
       children: [
         Scaffold(
-          key: _keyDrawer,
-          drawer: Drawer(
+          key: keyDrawer,
+          drawer: const Drawer(
             child: CustomDrawer(),
           ),
           body: NestedScrollView(
@@ -44,7 +43,7 @@ class _MainPageState extends State<MainPage> {
                     alignment: Alignment.topLeft,
                     margin: const EdgeInsets.all(11),
                     child: GestureDetector(
-                      onTap: ()=> _keyDrawer.currentState!.openDrawer(),
+                      onTap: ()=> keyDrawer.currentState!.openDrawer(),
                         child: const Icon(Icons.menu, size: 40,)
                     ),
                   ): null,
