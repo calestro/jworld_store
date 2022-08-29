@@ -55,10 +55,14 @@ class _StreamProductsState extends State<StreamProducts> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children:[
                   //Image
-                 Hero(
-                   tag: TagHero.imageProduct(bd.products[index].image[0],index),
-                   child: Image.asset(
-                     bd.products[index].image[0],width: 120,
+                 SizedBox(
+                   height: 120,
+                   child: Hero(
+                     tag: TagHero.imageProduct(bd.products[index].image[0],index),
+                     child: Image.asset(
+                       bd.products[index].image[0],fit: BoxFit.fitWidth,
+
+                     ),
                    ),
                  ),
                   //text

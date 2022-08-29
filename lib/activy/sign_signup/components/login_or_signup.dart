@@ -9,10 +9,10 @@ class Changer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(.4),
-          borderRadius: BorderRadius.all(Radius.circular(180))
+          borderRadius: const BorderRadius.all(Radius.circular(180))
       ),
       child: Container(
         width: wd-16,
@@ -21,10 +21,10 @@ class Changer extends StatelessWidget {
         height: wd * 0.32,
         decoration: BoxDecoration(
             color: Colors.red.shade800,
-            borderRadius: BorderRadius.all(Radius.circular(180))
+            borderRadius: const BorderRadius.all(Radius.circular(180))
         ),
         child: Text( isLogin ? "Cadastre-se": "Faça Login !", textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+          style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
         ),
       ),
     );

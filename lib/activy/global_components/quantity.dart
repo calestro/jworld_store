@@ -46,7 +46,7 @@ class _QuantityState extends State<Quantity> {
       children: [
         IconButton(
             onPressed:(){
-              if(qtd < 0){qtd--;}
+              if(qtd > 1){qtd--;}
               controller.text = qtd.toString();
               send.qtd.addAll({widget.indexStream:qtd});
               setState(() {});

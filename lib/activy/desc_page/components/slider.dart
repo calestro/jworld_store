@@ -22,18 +22,14 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
   @override
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
-    final double hg = MediaQuery.of(context).size.height;
     final List<Widget> imageSliders = imgList
-        .map((item) => Container(
-      margin: const EdgeInsets.all(15.0),
-      child: Image.asset(item, fit: BoxFit.fitWidth, width: 1000.0),
-    ))
+        .map((item) => Image.asset(item, fit: BoxFit.fitWidth, width:1000,alignment: Alignment.center, ))
         .toList();
 
     return Stack(
       children: [
         SizedBox(
-          height: hg * 0.45,
+          height:wd,
           child: Stack(
               children: [
             CarouselSlider(
@@ -41,7 +37,11 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
               carouselController: _controller,
               options: CarouselOptions(
                   autoPlay: false,
-                  height: hg * 0.45,
+                  viewportFraction: 1,
+                  padEnds: false,
+                  enlargeCenterPage: false,
+                  enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                  height:wd,
                   onPageChanged: (index, reason) {
                     setState(() {
                       _current = index;

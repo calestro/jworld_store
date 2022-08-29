@@ -22,17 +22,48 @@ class FakeBd{
   List<ProductsBd> products = [
 
     ProductsBd(
-        "Camisa ",
-        "Camisa Especial do GitHub - Feita de material 100% algodão",
-        28.8,
+        "Camisa Fresh Punch",
+        "Camisa Especial Fresh Punch - Feita de material 100% algodão",
+        26.6,
         {
           "M":10,
           "P":10,
           "G":0,
         },
+
         [
-          "img/products/git.png",
-          "img/products/git2.jpg",
+          "img/products/fresh_punch.png",
+          "img/products/fresh_punch_2.png",
+        ]
+        ),
+      ProductsBd(
+        "Camisa Yu-Gi-Oh ",
+        "Camisa Especial do Yugioh - Feita de material 100% algodão",
+        32.2,
+        {
+          "M":10,
+          "P":10,
+          "G":7,
+        },
+
+        [
+          "img/products/yugioh.png",
+          "img/products/yugioh_2.png",
+        ]
+        ),
+    ProductsBd(
+        "Camisa J Stars ",
+        "Camisa Especial do J-Stars - Feita de material 100% algodão",
+        32.2,
+        {
+          "M":10,
+          "P":10,
+          "G":7,
+        },
+
+        [
+          "img/products/j-stars.png",
+          "img/products/j_stars_2.png",
         ]
         ),
   ];

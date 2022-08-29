@@ -16,7 +16,6 @@ class _SignPageState extends State<SignPage> {
   @override
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
-    TextEditingController controllerPassoword = TextEditingController();
     double wd = MediaQuery.of(context).size.width;
     double hg = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -49,7 +48,7 @@ class _SignPageState extends State<SignPage> {
 
 
             AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 1000),
               top:250,
               left: isLogin ? 0 : wd * 2,
               child: SizedBox(
@@ -73,7 +72,7 @@ class _SignPageState extends State<SignPage> {
             ),
 
             AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 1000),
               top:250,
               left: !isLogin ? 0 : wd * 2,
               child: SizedBox(

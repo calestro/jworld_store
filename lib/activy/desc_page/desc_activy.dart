@@ -42,7 +42,7 @@ class _DescActivyState extends State<DescActivy> {
         ],
       ),
      body: Padding(
-       padding: const EdgeInsets.all(12),
+       padding: const EdgeInsets.all(0),
        child: SingleChildScrollView(
          child: LayoutBuilder(
            builder: (context, constraints){
@@ -52,10 +52,10 @@ class _DescActivyState extends State<DescActivy> {
                  children: [
                    Container(
                      width: wd,
+                    height: wd,
                     padding: const EdgeInsets.all(5),
                      decoration: DescStyle.imageBack,
                      child: Container(
-                       padding: const EdgeInsets.all(5),
                          decoration: DescStyle.image,
                          child: Hero(
                              tag: TagHero.imageProduct(widget.product.image[0],widget.index),
