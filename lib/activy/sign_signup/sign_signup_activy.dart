@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/sign_signup/backgound_custom_paint.dart';
+import 'package:mobile_j_world/activy/sign_signup/components/login_or_signup.dart';
 import 'package:mobile_j_world/activy/sign_signup/components/text_form.dart';
 
 
@@ -11,10 +12,11 @@ class SignPage extends StatefulWidget {
 }
 
 class _SignPageState extends State<SignPage> {
+  bool isLogin = true;
   @override
   Widget build(BuildContext context) {
-
     TextEditingController controller = TextEditingController();
+    TextEditingController controllerPassoword = TextEditingController();
     double wd = MediaQuery.of(context).size.width;
     double hg = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -46,8 +48,10 @@ class _SignPageState extends State<SignPage> {
             ),
 
 
-            Positioned(
+            AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
               top:250,
+              left: isLogin ? 0 : wd * 2,
               child: SizedBox(
                 width: wd,
                 height: hg/3,
@@ -66,6 +70,45 @@ class _SignPageState extends State<SignPage> {
                   ],
                 ),
               ),
+            ),
+
+            AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              top:250,
+              left: !isLogin ? 0 : wd * 2,
+              child: SizedBox(
+                width: wd,
+                height: hg/3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    SignForm(size: wd * 0.7, controller: controller, label: "Email"),
+                    SignForm(size: wd * 0.7, controller: controller, label: "Senha"),
+                    SignForm(size: wd * 0.7, controller: controller, label: "Confirme a Senha"),
+                    ElevatedButton(
+                        onPressed:(){},
+                        child: const Text("Cadstre-se")
+                    ),
+
+
+                  ],
+                ),
+              ),
+            ),
+
+
+
+
+
+
+            Positioned(
+              bottom: -wd * 0.2,
+                right: 0,
+                child: GestureDetector(
+                  onTap: (){setState(() {isLogin = !isLogin;});},
+                    child: Changer(wd: wd, isLogin: isLogin)
+                )
             ),
           ],
         ),
