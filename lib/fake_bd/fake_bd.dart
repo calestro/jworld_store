@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/cart_helper.dart';
-
 import 'package:mobile_j_world/fake_bd/helper/category.dart';
-import 'package:mobile_j_world/my_flutter_app_icons.dart';
 import 'helper/products.dart';
 
 
@@ -19,7 +17,7 @@ class FakeBd{
     CategoryBd("Casacos", Icons.ac_unit_rounded),
     CategoryBd("Decoração", Icons.add),
     CategoryBd("Figures", Icons.add),
-    CategoryBd("Cosplay", MyFlutterApp.ac_unit,)
+    CategoryBd("Cosplay", Icons.add,)
   ];
   List<ProductsBd> products = [
 

@@ -41,7 +41,7 @@ class CartAnimatedState extends State<CartAnimated> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => CartPage()));
+                  builder: (context) => const CartPage()));
         },
         icon: const Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
       ),

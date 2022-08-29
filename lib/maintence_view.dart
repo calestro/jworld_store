@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_j_world/activy/main_page/components/drawer.dart';
 import 'package:mobile_j_world/global_data.dart';
 
-import 'activy/main_page/main_page.dart';
 
 
 // Vai Configurar minhas Activy de acordo com o dispositivo
@@ -26,6 +26,6 @@ class _MaintenceViewState extends State<MaintenceView> {
   }
 
 
-    return const MainPage();
+    return const MyCustomDrawer();
   }
 }

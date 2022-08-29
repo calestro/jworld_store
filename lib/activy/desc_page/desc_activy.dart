@@ -34,9 +34,9 @@ class _DescActivyState extends State<DescActivy> {
         title: Image.asset("img/logo.png",height: 50, ),
         centerTitle: true,
         toolbarHeight: 60,
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: EdgeInsets.only(right: 10),
             child: CartAnimated(),
           )
         ],
@@ -53,17 +53,17 @@ class _DescActivyState extends State<DescActivy> {
                    Container(
                      width: wd,
                     padding: const EdgeInsets.all(5),
-                     decoration: DescStyle().imageBack,
+                     decoration: DescStyle.imageBack,
                      child: Container(
                        padding: const EdgeInsets.all(5),
-                         decoration: DescStyle().image,
+                         decoration: DescStyle.image,
                          child: Hero(
                              tag: TagHero.imageProduct(widget.product.image[0],widget.index),
                              child:CarrouselSlider(imgList:widget.product.image))
                      ),
                    ),
                    const SizedBox(height:20),
-                   Text(widget.product.name, style:DescStyle().title),
+                   Text(widget.product.name, style:DescStyle.title),
                    const SizedBox(height:20),
                    Text(widget.product.description, textAlign: TextAlign.center,),
                    const SizedBox(height:40),
@@ -89,13 +89,13 @@ class _DescActivyState extends State<DescActivy> {
                              padding: const EdgeInsets.only(bottom: 28, left: 10, right: 10),
                              child: Container(
                                padding: const EdgeInsets.all(3),
-                               decoration: DescStyle().priceContainerBack,
+                               decoration: DescStyle.priceContainerBack,
                                child: Container(
                                     padding: const EdgeInsets.all(3),
                                    alignment: Alignment.center,
-                                   decoration: DescStyle().priceContainer,
+                                   decoration: DescStyle.priceContainer,
                                    child: Text(funct.priceConvert(widget.product.price),
-                                     style: DescStyle().price,)
+                                     style: DescStyle.price,)
                                ),
                              ),
                            )),
@@ -119,7 +119,7 @@ class _DescActivyState extends State<DescActivy> {
                          flex: 2,
                          child: Column(
                            children: [
-                             Text(widget.product.name, style: DescStyle().title,),
+                             Text(widget.product.name, style: DescStyle.title,),
                              Text(widget.product.description,),
                              SizeSelector(sizes: funct.sizeTolist(widget.index),indexStream: widget.index),
                              Text(funct.priceConvert(widget.product.price)),

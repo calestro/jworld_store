@@ -35,10 +35,10 @@ class AppBarSearch extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
-              decoration: MainAppStyle().inputStyle,
+              decoration: MainAppStyle.inputStyle,
             ),
           ),
-          CartAnimated(),
+          const CartAnimated(),
           const SizedBox(
             width: 10,
           ),

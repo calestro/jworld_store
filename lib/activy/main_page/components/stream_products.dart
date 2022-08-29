@@ -49,7 +49,7 @@ class _StreamProductsState extends State<StreamProducts> {
             },
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
-              decoration:MainAppStyle().tileProducts,
+              decoration:MainAppStyle.tileProducts,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,7 +63,7 @@ class _StreamProductsState extends State<StreamProducts> {
                  ),
                   //text
                   Text(
-                      bd.products[index].name, style: MainAppStyle().textProductName
+                      bd.products[index].name, style: MainAppStyle.textProductName
                   ),
 
                   //size select

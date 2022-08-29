@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class MainAppStyle {
 
   // Box Decoration
-  final InputDecoration inputStyle = const InputDecoration(
+
+  static InputDecoration inputStyle = const InputDecoration(
     filled: true,
     fillColor: Colors.white,
     hintText: "Procurar...",
@@ -38,7 +39,7 @@ class MainAppStyle {
     ),
   );
 
-  final BoxDecoration menuCategory = BoxDecoration(
+  static BoxDecoration menuCategory = BoxDecoration(
       color: const Color(0xfff11111).withOpacity(0.8),
       borderRadius: const BorderRadius.only(
         topLeft:Radius.circular(20) ,
@@ -54,7 +55,7 @@ class MainAppStyle {
       )
   );
 
-  final BoxDecoration tileProducts = BoxDecoration(
+  static BoxDecoration tileProducts = BoxDecoration(
     color: const Color(0xfff4e7e7).withOpacity(0.5),
     borderRadius: const BorderRadius.vertical(
         top: Radius.elliptical(25, 25),
@@ -69,16 +70,15 @@ class MainAppStyle {
   );
 
   //TextStyle
-  final TextStyle textMenuCategory = const TextStyle(
+  static TextStyle textMenuCategory = const TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
-
-  final TextStyle textProductName = const TextStyle(
+  static TextStyle textProductName = const TextStyle(
     fontWeight: FontWeight.bold,
   );
-final TextStyle textPrice = const TextStyle(
+  static TextStyle textPrice = const TextStyle(
     fontWeight: FontWeight.bold,
   );
 

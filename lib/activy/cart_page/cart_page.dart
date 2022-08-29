@@ -18,7 +18,6 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
 
     FakeBd bd = FakeBd();
-    CartStyle style = CartStyle();
     MyFunctions funct = MyFunctions();
 
     double hg = MediaQuery.of(context).size.height;
@@ -40,15 +39,15 @@ class _CartPageState extends State<CartPage> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          bd.myCart.isEmpty ?
-            const Center(
-              child: Text("Ainda não tem nenhum produto", style:TextStyle( fontSize:15),),
-            )
-                :
             SizedBox(
               height: hg - MediaQuery.of(context).padding.top -
                   MediaQuery.of(context).padding.bottom - 120,
-              child: ListView.builder(
+              child:bd.myCart.isEmpty ?
+              Center(
+                child: Text("Ainda não tem nenhum produto", style:CartStyle.titleCart),
+              )
+                  :
+              ListView.builder(
                 shrinkWrap: true,
                 physics: const ScrollPhysics(),
                 itemCount: bd.myCart.length,
@@ -76,11 +75,11 @@ class _CartPageState extends State<CartPage> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text(bd.myCart[index].product.name, style: style.titleCart,),
+                                    Text(bd.myCart[index].product.name, style: CartStyle.titleCart,),
 
                                     QuantityCart(index: index),
                                       Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
-                                      style: style.price,
+                                      style: CartStyle.price,
                                     ),
                                   ],
                                 ),
@@ -94,10 +93,10 @@ class _CartPageState extends State<CartPage> {
                                         alignment: Alignment.center,
                                         width: 21,
                                         height: 21,
-                                        decoration: style.boxSize,
+                                        decoration: CartStyle.boxSize,
                                         child: Text(bd.myCart[index].size,
                                           textAlign: TextAlign.center,
-                                          style: style.sizeText,),
+                                          style: CartStyle.sizeText,),
                                       )
                                     ],
                                   )
@@ -132,7 +131,7 @@ class _CartPageState extends State<CartPage> {
               child: Text(bd.myCart.isEmpty ? "R\$ 0,00" :
               funct.priceConvert(total),
                   textAlign: TextAlign.center,
-                  style:style.allTotal
+                  style:CartStyle.allTotal,
               ),
             ),
             Expanded(

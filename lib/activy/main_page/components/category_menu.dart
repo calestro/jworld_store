@@ -30,7 +30,7 @@ class CategoryMenu extends StatelessWidget {
                       ),
                       child: Container(
                         width: 80,
-                        decoration: MainAppStyle().menuCategory,
+                        decoration: MainAppStyle.menuCategory,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +43,7 @@ class CategoryMenu extends StatelessWidget {
                             ),
                             Expanded(
                                 child: Text(bd.category[index].name,
-                                  style:MainAppStyle().textMenuCategory,
+                                  style:MainAppStyle.textMenuCategory,
                                 )
                             ),
                           ],
