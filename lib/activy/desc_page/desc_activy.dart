@@ -14,12 +14,10 @@ import '../main_page/tag_hero.dart';
 
 class DescActivy extends StatefulWidget {
   final ProductsBd product;
-  final Function update;
   final int index;
   const DescActivy({Key? key,
     required this.product,
     required this.index,
-    required this.update,
   }) : super(key: key);
 
   @override
@@ -39,7 +37,7 @@ class _DescActivyState extends State<DescActivy> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: CartAnimated(update: (){setState(() {widget.update();});}),
+            child: CartAnimated(),
           )
         ],
       ),
@@ -78,7 +76,7 @@ class _DescActivyState extends State<DescActivy> {
                            mainAxisAlignment: MainAxisAlignment.start,
                            mainAxisSize: MainAxisSize.min,
                            children: [
-                             SizeSelector(sizes:funct.sizeTolist(widget.index), update: widget.update, indexStream: widget.index),
+                             SizeSelector(sizes:funct.sizeTolist(widget.index),indexStream: widget.index),
                              const SizedBox(height:20),
                              Quantity(indexStream: widget.index, hg: 48, wd: 55,),
                              const SizedBox(height:20),
@@ -123,7 +121,7 @@ class _DescActivyState extends State<DescActivy> {
                            children: [
                              Text(widget.product.name, style: DescStyle().title,),
                              Text(widget.product.description,),
-                             SizeSelector(sizes: funct.sizeTolist(widget.index), update: widget.update, indexStream: widget.index),
+                             SizeSelector(sizes: funct.sizeTolist(widget.index),indexStream: widget.index),
                              Text(funct.priceConvert(widget.product.price)),
                              Quantity(indexStream: widget.index, hg: 40,wd:55),
                            ],
@@ -141,7 +139,6 @@ class _DescActivyState extends State<DescActivy> {
        ),
      ),
       bottomNavigationBar: BuyButton(snapshot: widget.product,
-        update: (){setState(() {widget.update();});},
         index: widget.index,
         hg:50,
         isRadius: false,),

@@ -7,8 +7,7 @@ import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
 class CartPage extends StatefulWidget {
-  final Function update;
-  const CartPage({Key? key, required this.update}) : super(key: key);
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   State<CartPage> createState() => _CartPageState();
@@ -79,11 +78,8 @@ class _CartPageState extends State<CartPage> {
                                   children: [
                                     Text(bd.myCart[index].product.name, style: style.titleCart,),
 
-                                    QuantityCart(
-                                        index: index,
-                                        update:(){setState(() {widget.update();});}),
-
-                                    Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
+                                    QuantityCart(index: index),
+                                      Text(funct.priceConvert(bd.myCart[index].product.price * bd.myCart[index].qtd),
                                       style: style.price,
                                     ),
                                   ],
@@ -116,7 +112,7 @@ class _CartPageState extends State<CartPage> {
                           child: IconButton(
                               onPressed: (){
                                 bd.myCart.removeAt(index); //icone que remove o item
-                                setState(() {widget.update();});
+                                setState(() {});
                                 },
                               icon: const Icon(Icons.close))),
                     ],

@@ -3,8 +3,7 @@ import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 class QuantityCart extends StatefulWidget {
   final int index;
-  final Function update;
-   const QuantityCart({Key? key,required this.index, required this.update}) : super(key: key);
+   const QuantityCart({Key? key,required this.index}) : super(key: key);
 
   @override
   State<QuantityCart> createState() => _QuantityCartState();
@@ -41,7 +40,7 @@ class _QuantityCartState extends State<QuantityCart> {
             qtd--;
             controller.text = qtd.toString();
             bd.myCart[widget.index].qtd = qtd;
-            setState(() {widget.update();});
+            setState(() {});
             },
           icon: const Icon(Icons.arrow_back_ios, size: 10,),
         ),
@@ -75,7 +74,7 @@ class _QuantityCartState extends State<QuantityCart> {
             qtd++;
             controller.text = qtd.toString();
             bd.myCart[widget.index].qtd = qtd;
-            setState(() {widget.update();});
+            setState(() {});
           },
           icon: const Icon(Icons.arrow_forward_ios, size: 10,),
         ),

@@ -56,22 +56,17 @@ class _MainPageState extends State<MainPage> {
                     pinned: true,
                     floating: true,
                     delegate: DelegateClass(
-                      childPinned:AppBarSearch(update: update),
+                      childPinned:AppBarSearch(),
                       child:const CategoryMenu(),
                     )
                 ),
               ];
             },
-            body: StreamProducts(update:update),
+            body: StreamProducts(),
           ),
         ),
       ],
     );
-  }
-  void update(){
-    setState(() {
-
-    });
   }
 
 }

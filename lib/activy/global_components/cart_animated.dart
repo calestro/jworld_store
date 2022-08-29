@@ -4,17 +4,32 @@ import '../../fake_bd/fake_bd.dart';
 import '../cart_page/cart_page.dart';
 
 
-class CartAnimated extends StatelessWidget {
-  final Function update;
-  const CartAnimated({Key? key, required this.update}) : super(key: key);
+class CartAnimated extends StatefulWidget {
+  const CartAnimated({Key? key}) : super(key: key);
+  @override
+  State<CartAnimated> createState() => CartAnimatedState();
+}
+class CartAnimatedState extends State<CartAnimated> {
+  static ValueNotifier itemADD = ValueNotifier(0);
+  FakeBd bd = FakeBd();
+  @override
+  void initState() {
+    itemADD.addListener(() {
+      if(mounted){setState(() {});}
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    FakeBd bd = FakeBd();
+
     int badge = 0;
     for (var element in bd.myCart) {
       badge = badge + element.qtd;
     }
+
+
+
     return Badge(
       badgeContent: Text(badge.toString(),
         style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w800),),
@@ -26,7 +41,7 @@ class CartAnimated extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => CartPage(update:update)));
+                  builder: (context) => CartPage()));
         },
         icon: const Icon(Icons.shopping_cart, color: Colors.white,size: 40,),
       ),

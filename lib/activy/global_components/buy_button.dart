@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/function.dart';
+import 'package:mobile_j_world/activy/global_components/cart_animated.dart';
 import '../../fake_bd/helper/products.dart';
 
 
 // ignore: must_be_immutable
 class BuyButton extends StatefulWidget {
   final ProductsBd snapshot;
-  final Function update;
   final int index;
   double hg;
   bool isRadius;
-  BuyButton({Key? key, required this.snapshot, required this.update, required this.index, this.hg = 40, this.isRadius = true}) : super(key: key);
+  BuyButton({Key? key, required this.snapshot, required this.index, this.hg = 40, this.isRadius = true}) : super(key: key);
 
   @override
   State<BuyButton> createState() => _BuyButtonState();
@@ -33,7 +33,7 @@ class _BuyButtonState extends State<BuyButton> {
           setState(() {isPressed = true;});
           funct.insertCart(widget.snapshot, widget.index);
           Timer(const Duration(milliseconds: 1000), ()=> setState(() {isPressed = false;}));
-          widget.update();
+          CartAnimatedState.itemADD.value++;
           },
         child: Container(
           width: double.maxFinite,

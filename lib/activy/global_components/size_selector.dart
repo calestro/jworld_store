@@ -4,9 +4,8 @@ import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 class SizeSelector extends StatefulWidget {
   final List<String> sizes;
   final int indexStream;
-  final Function update;
   const SizeSelector(
-      {Key? key, required this.sizes, required this.update, required this.indexStream})
+      {Key? key, required this.sizes, required this.indexStream})
       : super(key: key);
 
   @override

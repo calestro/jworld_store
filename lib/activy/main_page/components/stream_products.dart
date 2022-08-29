@@ -14,9 +14,9 @@ import '../tag_hero.dart';
 
 
 class StreamProducts extends StatefulWidget {
-  final Function update;
 
-  const StreamProducts({Key? key, required this.update}) : super(key: key);
+
+  const StreamProducts({Key? key}) : super(key: key);
 
   @override
   State<StreamProducts> createState() => _StreamProductsState();
@@ -43,7 +43,6 @@ class _StreamProductsState extends State<StreamProducts> {
               Navigator.of(context).push(CustomRoute(
                 child:DescActivy(
                   product: bd.products[index],
-                  update:(){setState(() {widget.update();});},
                   index: index,
                 ),
               ));
@@ -70,7 +69,6 @@ class _StreamProductsState extends State<StreamProducts> {
                   //size select
                   SizeSelector(
                     sizes: funct.sizeTolist(index),
-                    update: widget.update,
                     indexStream:index
                   ),
 
@@ -94,7 +92,6 @@ class _StreamProductsState extends State<StreamProducts> {
                   BuyButton(
                       snapshot:bd.products[index],
                       index: index,
-                      update:widget.update
                   ),
                 ]
 
