@@ -14,7 +14,7 @@ class MyFunctions{
     bool isExist = false;
     for (var element in bd.myCart) {
      if(element.product == snapshot && element.size == send.size[index]){
-       element.qtd++;
+       element.qtd = element.qtd + send.qtd[index]!.toInt();
        isExist = true;
      }
 

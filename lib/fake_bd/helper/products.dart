@@ -7,5 +7,6 @@ class ProductsBd{
   final List<String> image;
 
 
+
   ProductsBd(this.name, this.description, this.price, this.size,this.image);
 }

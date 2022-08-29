@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:mobile_j_world/activy/main_page/main_page.dart';
+import 'package:mobile_j_world/activy/sign_signup/sign_signup_activy.dart';
 
 
 class MyCustomDrawer extends StatelessWidget {
@@ -39,7 +40,7 @@ class MenuDrawer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
-            onTap: (){},
+            onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> SignPage())),
               child:Container(
                 height: 200,
                 padding:const EdgeInsets.all(20),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/cart_page/components/cart_quantity.dart';
 import 'package:mobile_j_world/activy/cart_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
+import 'package:mobile_j_world/activy/global_components/cart_animated.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
 
@@ -111,6 +112,7 @@ class _CartPageState extends State<CartPage> {
                           child: IconButton(
                               onPressed: (){
                                 bd.myCart.removeAt(index); //icone que remove o item
+                                CartAnimatedState.itemADD.value++;
                                 setState(() {});
                                 },
                               icon: const Icon(Icons.close))),

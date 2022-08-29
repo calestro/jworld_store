@@ -7,7 +7,7 @@ import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
-import '../../custom_routes.dart';
+import '../../trasinctions/custom_routes.dart';
 import '../tag_hero.dart';
 
 

@@ -30,6 +30,10 @@ class _QuantityState extends State<Quantity> {
 
     super.initState();
   }
+
+
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -42,7 +46,7 @@ class _QuantityState extends State<Quantity> {
       children: [
         IconButton(
             onPressed:(){
-              qtd--;
+              if(qtd < 0){qtd--;}
               controller.text = qtd.toString();
               send.qtd.addAll({widget.indexStream:qtd});
               setState(() {});
