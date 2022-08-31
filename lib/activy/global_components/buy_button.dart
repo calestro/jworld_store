@@ -10,9 +10,10 @@ import '../../fake_bd/helper/products.dart';
 class BuyButton extends StatefulWidget {
   final ProductsBd snapshot;
   final int index;
+  final Function upodate;
   double hg;
   bool isRadius;
-  BuyButton({Key? key, required this.snapshot, required this.index, this.hg = 40, this.isRadius = true}) : super(key: key);
+  BuyButton({Key? key, required this.snapshot, required this.index, this.hg = 40, this.isRadius = true, required this.upodate}) : super(key: key);
 
   @override
   State<BuyButton> createState() => _BuyButtonState();
@@ -20,12 +21,11 @@ class BuyButton extends StatefulWidget {
 
 class _BuyButtonState extends State<BuyButton> {
   bool isPressed = false;
+  MyFunctions funct = MyFunctions();
+
 
   @override
   Widget build(BuildContext context) {
-    MyFunctions funct = MyFunctions();
-
-
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(

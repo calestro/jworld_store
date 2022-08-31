@@ -26,6 +26,7 @@ class _QuantityState extends State<Quantity> {
     controller.addListener(() {
       qtd = int.parse(controller.text);
       send.qtd.addAll({widget.indexStream:qtd});
+      setState(() {});
     });
 
     super.initState();

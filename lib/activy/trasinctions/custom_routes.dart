@@ -12,6 +12,7 @@ class CustomRoute extends PageRouteBuilder {
       } else {
         return child;
       }
+
     },
     transitionDuration: const Duration(milliseconds: 1000),
     reverseTransitionDuration: const Duration(milliseconds: 1000),

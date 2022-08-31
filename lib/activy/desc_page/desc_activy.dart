@@ -25,6 +25,8 @@ class DescActivy extends StatefulWidget {
 }
 
 class _DescActivyState extends State<DescActivy> {
+
+
   @override
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
@@ -138,10 +140,13 @@ class _DescActivyState extends State<DescActivy> {
          ),
        ),
      ),
-      bottomNavigationBar: BuyButton(snapshot: widget.product,
+      bottomNavigationBar: BuyButton(
+        snapshot: widget.product,
         index: widget.index,
         hg:50,
-        isRadius: false,),
+        isRadius: false,
+        upodate: (){setState(() {});},
+      ),
     );
   }
 }

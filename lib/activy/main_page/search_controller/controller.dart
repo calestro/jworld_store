@@ -41,14 +41,14 @@ class ControllerSearch {
   bool searchTest(List searchArray, List searchList) {
     String result = "";
     List formart = [];
-    int coalizao = 0;
+    int coalition = 0;
     int different = 0;
     searchList.forEach((element) {
       formart.addAll(searchFormat(element));
     });
       searchArray.forEach((element) {
-        if(formart.contains(element) && element != " "){
-          coalizao++;
+        if(formart.contains(element)){
+          coalition++;
         }
         else{
           different++;
@@ -57,6 +57,6 @@ class ControllerSearch {
 
 
 
-    return coalizao > different;
+    return coalition > different * 2;
   }
 }

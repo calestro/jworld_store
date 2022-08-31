@@ -33,6 +33,7 @@ class _StreamProductsState extends State<StreamProducts> {
   }
   @override
   Widget build(BuildContext context) {
+
     FakeBd bd = FakeBd();
     MyFunctions funct = MyFunctions();
     return GridView.builder(
@@ -104,6 +105,7 @@ class _StreamProductsState extends State<StreamProducts> {
                   BuyButton(
                       snapshot:bd.products[index],
                       index: index,
+                      upodate: (){setState(() {});},
                   ),
                 ]
 
