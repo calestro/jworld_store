@@ -23,7 +23,9 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
   Widget build(BuildContext context) {
     final double wd = MediaQuery.of(context).size.width;
     final List<Widget> imageSliders = imgList
-        .map((item) => Image.asset(item, fit: BoxFit.fitWidth, width:1000,alignment: Alignment.center, ))
+        .map((item) => Padding(
+      padding: EdgeInsets.all(24),
+        child: Image.asset(item, fit: BoxFit.fitWidth, width:1000,alignment: Alignment.center, )))
         .toList();
 
     return Stack(

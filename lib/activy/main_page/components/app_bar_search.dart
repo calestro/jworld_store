@@ -4,6 +4,7 @@ import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/global_data.dart';
 
 import '../../../fake_bd/fake_bd.dart';
+import '../search_controller/controller.dart';
 
 // Barra do Search MainPage
 class AppBarSearch extends StatelessWidget {
@@ -30,7 +31,7 @@ class AppBarSearch extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.8,
             height: 50,
             child: TextField(
-              controller: searchController,
+              controller: ControllerSearch.searchController,
               cursorColor: Colors.black,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,

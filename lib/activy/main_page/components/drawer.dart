@@ -3,7 +3,7 @@ import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:mobile_j_world/activy/main_page/main_page.dart';
 import 'package:mobile_j_world/activy/sign_signup/sign_signup_activy.dart';
-import 'package:mobile_j_world/fake_bd/fake_bd.dart';
+
 
 
 class MyCustomDrawer extends StatelessWidget {
@@ -69,7 +69,6 @@ class MenuDrawer extends StatelessWidget {
                             color: Colors.white,
                           fontWeight: FontWeight.w600
                         )),
-                    Text(FakeBd().products[0].qtd.toInt().toString())
                   ],
                 ),
               ),

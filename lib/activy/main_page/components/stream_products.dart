@@ -3,6 +3,7 @@ import 'package:mobile_j_world/activy/desc_page/desc_activy.dart';
 import 'package:mobile_j_world/activy/global_components/buy_button.dart';
 import 'package:mobile_j_world/activy/global_components/quantity.dart';
 import 'package:mobile_j_world/activy/global_components/size_selector.dart';
+import 'package:mobile_j_world/activy/main_page/search_controller/controller.dart';
 import 'package:mobile_j_world/activy/main_page/style.dart';
 import 'package:mobile_j_world/activy/function.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
@@ -24,11 +25,18 @@ class StreamProducts extends StatefulWidget {
 
 class _StreamProductsState extends State<StreamProducts> {
   @override
+  void initState() {
+    ControllerSearch.searchController.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     FakeBd bd = FakeBd();
     MyFunctions funct = MyFunctions();
     return GridView.builder(
-      itemCount: bd.products.length,
+      itemCount: ControllerSearch().search().length,
         padding: const EdgeInsets.only(top: 15),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
@@ -60,14 +68,14 @@ class _StreamProductsState extends State<StreamProducts> {
                    child: Hero(
                      tag: TagHero.imageProduct(bd.products[index].image[0],index),
                      child: Image.asset(
-                       bd.products[index].image[0],fit: BoxFit.fitWidth,
+                       ControllerSearch().search()[index].image[0],fit: BoxFit.fitWidth,
 
                      ),
                    ),
                  ),
                   //text
                   Text(
-                      bd.products[index].name, style: MainAppStyle.textProductName
+                      ControllerSearch().search()[index].name, style: MainAppStyle.textProductName
                   ),
 
                   //size select
@@ -83,7 +91,7 @@ class _StreamProductsState extends State<StreamProducts> {
 
                   //price
                   Text(
-                      funct.priceConvert(bd.products[index].price),
+                      funct.priceConvert(ControllerSearch().search()[index].price),
                       style:const TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w600

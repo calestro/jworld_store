@@ -34,10 +34,15 @@ class FakeBd{
         [
           "img/products/fresh_punch.png",
           "img/products/fresh_punch_2.png",
+        ],
+        [
+          "one punch man",
+          "camisa",
+          "anime",
         ]
         ),
       ProductsBd(
-        "Camisa Yu-Gi-Oh ",
+        "Camisa yu-Gi-Oh ",
         "Camisa Especial do Yugioh - Feita de material 100% algodão",
         32.2,
         {
@@ -49,6 +54,13 @@ class FakeBd{
         [
           "img/products/yugioh.png",
           "img/products/yugioh_2.png",
+        ],
+        [
+          "yugioh",
+          "yu-gi-oh",
+          "yu gi oh",
+          "camisa",
+          "anime",
         ]
         ),
     ProductsBd(
@@ -64,7 +76,12 @@ class FakeBd{
         [
           "img/products/j-stars.png",
           "img/products/j_stars_2.png",
-        ]
+        ],
+      [
+        "animes",
+        "camisa",
+        "jstars",
+      ]
         ),
   ];
 

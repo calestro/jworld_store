@@ -6,10 +6,11 @@ class ProductsBd{
   final Map<String,int> size;
   final List<String> image;
   late double _qtd;
+  final List<String> search;
 
 
 
-  ProductsBd(this.name, this.description, this.price, this.size,this.image);
+  ProductsBd(this.name, this.description, this.price, this.size,this.image, this.search);
 
   double get qtd {
     _qtd = 0;
