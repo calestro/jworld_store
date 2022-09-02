@@ -24,7 +24,7 @@ class _CarrouselSliderState extends State<CarrouselSlider> {
     final double wd = MediaQuery.of(context).size.width;
     final List<Widget> imageSliders = imgList
         .map((item) => Padding(
-      padding: EdgeInsets.all(24),
+      padding: const EdgeInsets.all(24),
         child: Image.asset(item, fit: BoxFit.fitWidth, width:1000,alignment: Alignment.center, )))
         .toList();
 

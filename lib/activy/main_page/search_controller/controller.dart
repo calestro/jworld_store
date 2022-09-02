@@ -6,18 +6,18 @@ class ControllerSearch {
   static TextEditingController searchController = TextEditingController();
 
   List search() {
-    if (searchController.text == null || searchController.text == "") {
+    if (searchController.text == "") {
       return bd.products;
     }
     else {
       String search = searchController.text.toLowerCase();
       List searchList = [];
       List searchArray = searchFormat(search);
-      bd.products.forEach((element) {
+      for (var element in bd.products) {
         if (searchTest(searchArray, element.search)) {
           searchList.add(element);
         }
-      });
+      }
       return searchList;
     }
   }
@@ -39,21 +39,20 @@ class ControllerSearch {
 
 
   bool searchTest(List searchArray, List searchList) {
-    String result = "";
     List formart = [];
     int coalition = 0;
     int different = 0;
-    searchList.forEach((element) {
+    for (var element in searchList) {
       formart.addAll(searchFormat(element));
-    });
-      searchArray.forEach((element) {
+    }
+      for (var element in searchArray) {
         if(formart.contains(element)){
           coalition++;
         }
         else{
           different++;
         }
-      });
+      }
 
 
 

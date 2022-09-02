@@ -15,7 +15,6 @@ class AppBarSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     int badge = 0;
     FakeBd bd = FakeBd();
-    TextEditingController searchController = TextEditingController();
     for (var element in bd.myCart) {
       badge = badge + element.qtd;
     }
