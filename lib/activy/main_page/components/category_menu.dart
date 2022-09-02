@@ -25,8 +25,6 @@ class _CategoryMenuState extends State<CategoryMenu> {
   Widget build(BuildContext context) {
     ScrollController scroll = ScrollController();
     double wd = MediaQuery.of(context).size.width;
-
-
     return Center(
       child: SizedBox(
         width: double.infinity,

@@ -35,7 +35,9 @@ class _BuyButtonState extends State<BuyButton> {
           Timer(const Duration(milliseconds: 1000), ()=> setState(() {isPressed = false;}));
           CartAnimatedState.itemADD.value++;
           },
-        child: Container(
+        child: AnimatedContainer(
+          curve: Curves.fastOutSlowIn,
+          duration: Duration(milliseconds: 500),
           width: double.maxFinite,
           padding: const EdgeInsets.all(5),
           height: widget.hg,
@@ -43,12 +45,29 @@ class _BuyButtonState extends State<BuyButton> {
             color:isPressed ? Colors.green : Colors.red,
             borderRadius: widget.isRadius ? const BorderRadius.all(Radius.circular(12)) : null,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:  [
-              Icon(Icons.shopping_cart_outlined,color: Colors.white,size: isPressed ? 30 : 25,),
-              isPressed ? Container() : const Text("COMPRAR", style: TextStyle(color: Colors.white),)
-            ],
+          child: Padding(
+            padding: EdgeInsets.only(left: 15),
+            child: Stack(
+              children:  [
+                Expanded(
+                  flex: 1,
+                    child: AnimatedAlign(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.fastOutSlowIn,
+                        alignment: isPressed ? Alignment.center : Alignment.centerLeft,
+                        child: AnimatedScale(
+                            curve: Curves.fastOutSlowIn,
+                          duration:Duration(milliseconds: 500),
+                            scale: isPressed ? 1.3 : 1,
+                            child: Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 25,)))),
+                isPressed ?
+                SizedBox()
+                    :
+                Align(
+                  alignment: Alignment.center,
+                    child: const Text("COMPRAR", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))
+              ],
+            ),
           ),
         ),
       ),
