@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/fake_bd/fake_bd.dart';
 
+import '../../global_components/cart_animated.dart';
+
 class QuantityCart extends StatefulWidget {
   final int index;
    const QuantityCart({Key? key,required this.index}) : super(key: key);
@@ -41,6 +43,7 @@ class _QuantityCartState extends State<QuantityCart> {
             controller.text = qtd.toString();
             bd.myCart[widget.index].qtd = qtd;
             setState(() {});
+            CartAnimatedState.itemADD.value++;
             },
           icon: const Icon(Icons.arrow_back_ios, size: 10,),
         ),
@@ -75,6 +78,7 @@ class _QuantityCartState extends State<QuantityCart> {
             controller.text = qtd.toString();
             bd.myCart[widget.index].qtd = qtd;
             setState(() {});
+            CartAnimatedState.itemADD.value++;
           },
           icon: const Icon(Icons.arrow_forward_ios, size: 10,),
         ),
