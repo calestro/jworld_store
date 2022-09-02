@@ -54,6 +54,21 @@ class MainAppStyle {
         bottom:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid,),
       )
   );
+static BoxDecoration menuCategorySelect = BoxDecoration(
+      color:Colors.red.shade800,
+      borderRadius: const BorderRadius.only(
+        topLeft:Radius.circular(10) ,
+        topRight:Radius.circular(7),
+        bottomLeft:Radius.circular(7),
+        bottomRight:Radius.circular(10),
+      ),
+      border: Border(
+        top:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        left:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        right:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid, ),
+        bottom:BorderSide(color: const Color(0xfff11111).withOpacity(0.3), width: 1, style: BorderStyle.solid,),
+      )
+  );
 
   static BoxDecoration tileProducts = BoxDecoration(
     color: const Color(0xfff4e7e7).withOpacity(0.5),
