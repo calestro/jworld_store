@@ -33,7 +33,6 @@ class _StreamProductsState extends State<StreamProducts> {
   }
   @override
   Widget build(BuildContext context) {
-
     FakeBd bd = FakeBd();
     MyFunctions funct = MyFunctions();
     return GridView.builder(

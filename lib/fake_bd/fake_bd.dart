@@ -13,11 +13,13 @@ class FakeBd{
 
 
   List <CategoryBd> category =[
-    CategoryBd("Camisas", Icons.account_tree_sharp),
-    CategoryBd("Casacos", Icons.ac_unit_rounded),
-    CategoryBd("Decoração", Icons.add),
-    CategoryBd("Figures", Icons.add),
-    CategoryBd("Cosplay", Icons.add,)
+    CategoryBd("Animes", Icons.account_tree_sharp),
+    CategoryBd("Hqs", Icons.ac_unit_rounded),
+    CategoryBd("Desenhos", Icons.add),
+    CategoryBd("Séries", Icons.add),
+    CategoryBd("TI", Icons.add),
+    CategoryBd("Games", Icons.add,),
+    CategoryBd("Sátiras", Icons.add,)
   ];
   List<ProductsBd> products = [
 

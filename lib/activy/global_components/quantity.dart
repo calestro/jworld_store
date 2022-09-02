@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 
+
 // ignore: must_be_immutable
 class Quantity extends StatefulWidget {
+  static ValueNotifier itemAdd = ValueNotifier(0);
   final int indexStream;
   double wd;
   double hg;
@@ -13,7 +15,6 @@ class Quantity extends StatefulWidget {
 }
 
 class _QuantityState extends State<Quantity> {
-
   int qtd = 1;
   late TextEditingController controller;
   SendToCart send = SendToCart();
@@ -28,18 +29,19 @@ class _QuantityState extends State<Quantity> {
       send.qtd.addAll({widget.indexStream:qtd});
       setState(() {});
     });
+    Quantity.itemAdd.addListener(() {
+      if(mounted) {
+        setState(() {
 
+        });
+      }
+    });
     super.initState();
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
-
-    controller.text = qtd.toString();
-
+    controller.text = send.qtd[widget.indexStream].toString();
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -50,7 +52,6 @@ class _QuantityState extends State<Quantity> {
               if(qtd > 1){qtd--;}
               controller.text = qtd.toString();
               send.qtd.addAll({widget.indexStream:qtd});
-              setState(() {});
             },
             icon: const Icon(Icons.arrow_back_ios, size: 16,),
         ),
@@ -80,8 +81,8 @@ class _QuantityState extends State<Quantity> {
           onPressed:(){
             qtd++;
             controller.text = qtd.toString();
-            setState(() {});
             send.qtd.addAll({widget.indexStream:qtd});
+            Quantity.itemAdd.value++;
           },
           icon: const Icon(Icons.arrow_forward_ios, size: 16,),
         ),

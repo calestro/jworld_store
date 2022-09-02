@@ -3,6 +3,7 @@ import 'package:mobile_j_world/activy/helper/send_to_cart.dart';
 
 class SizeSelector extends StatefulWidget {
   final List<String> sizes;
+  static ValueNotifier itemAdd = ValueNotifier(0);
   final int indexStream;
   const SizeSelector(
       {Key? key, required this.sizes, required this.indexStream})
@@ -19,10 +20,14 @@ class _SizeSelectorState extends State<SizeSelector> {
   void initState() {
     selectedSize = widget.sizes[0];
     send.size.addAll({widget.indexStream:selectedSize});
+    SizeSelector.itemAdd.addListener(() {
+      if(mounted){setState(() {}); }
+    });
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
+    send.size[widget.indexStream] = selectedSize;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: List.generate(
@@ -35,7 +40,7 @@ class _SizeSelectorState extends State<SizeSelector> {
                 borderRadius: BorderRadius.circular(3),
                 onTap: () {
                   selectedSize = widget.sizes[index];
-                  setState((){});
+                  SizeSelector.itemAdd.value++;
                   send.size.addAll({
                     widget.indexStream:selectedSize
                   }
