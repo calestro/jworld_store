@@ -37,7 +37,7 @@ class _BuyButtonState extends State<BuyButton> {
           },
         child: AnimatedContainer(
           curve: Curves.fastOutSlowIn,
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           width: double.maxFinite,
           padding: const EdgeInsets.all(5),
           height: widget.hg,
@@ -50,18 +50,18 @@ class _BuyButtonState extends State<BuyButton> {
             child: Stack(
               children:  [
                 AnimatedAlign(
-                    duration: Duration(milliseconds: 500),
+                    duration: const Duration(milliseconds: 500),
                     curve: Curves.fastOutSlowIn,
                     alignment: isPressed ? Alignment.center : Alignment.centerLeft,
                     child: AnimatedScale(
                         curve: Curves.fastOutSlowIn,
-                      duration:Duration(milliseconds: 500),
+                      duration:const Duration(milliseconds: 500),
                         scale: isPressed ? 1.3 : 1,
-                        child: Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 25,))),
+                        child: const Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 25,))),
                 Align(
                   alignment: Alignment.center,
                     child:AnimatedOpacity (
-                      duration: Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 400),
                       opacity: isPressed ? 0 : 1,
                         curve: Curves.fastOutSlowIn,
                         child: const Text("COMPRAR", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)))

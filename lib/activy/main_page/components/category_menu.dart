@@ -24,7 +24,6 @@ class _CategoryMenuState extends State<CategoryMenu> {
   @override
   Widget build(BuildContext context) {
     ScrollController scroll = ScrollController();
-    double wd = MediaQuery.of(context).size.width;
     return Center(
       child: SizedBox(
         width: double.infinity,
@@ -43,13 +42,13 @@ class _CategoryMenuState extends State<CategoryMenu> {
                 child: GestureDetector(
                   onTap: (){switchSelection(-1);},
                   child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
+                    duration: const Duration(milliseconds: 300),
                     width: 80,
                     height: 70,
                     decoration: isSelect[-1]! ? MainAppStyle.menuCategorySelect : MainAppStyle.menuCategory,
                     child: Column(
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 2,
                             child: Icon(Icons.home, color: Colors.white)
                         ),
@@ -79,7 +78,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
                           child: GestureDetector(
                             onTap: (){switchSelection(index);},
                             child: AnimatedContainer(
-                              duration: Duration(milliseconds: 300),
+                              duration: const Duration(milliseconds: 300),
                               width: 80,
                               decoration: isSelect[index]! ? MainAppStyle.menuCategorySelect : MainAppStyle.menuCategory,
                               child: Column(

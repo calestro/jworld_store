@@ -18,6 +18,8 @@ class ButtonDrawer extends StatelessWidget {
     return Container(
       width: wd,
       height: 40,
+      padding: const EdgeInsets.all(10),
+      color: Colors.white,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,

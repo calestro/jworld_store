@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -13,16 +15,17 @@ class MyCustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      style: DrawerStyle.defaultStyle,
+      style: DrawerStyle.style3,
       menuScreen: const MenuDrawer(),
       mainScreen: const MainPage(),
-      borderRadius: 40.0,
+      borderRadius: 30.0,
       showShadow: true,
       angle: 0,
+      duration: const Duration(milliseconds: 620),
       menuScreenTapClose: true,
       androidCloseOnBackTap: true,
-      menuBackgroundColor: Colors.redAccent,
-      slideWidth: MediaQuery.of(context).size.width * .6,
+      menuBackgroundColor: Colors.red.shade600,
+      slideWidth: MediaQuery.of(context).size.width * .75,
       openCurve: Curves.easeIn,
       closeCurve: Curves.easeInOut,
     );
@@ -38,8 +41,7 @@ class MenuDrawer extends StatelessWidget {
     return Container(
       padding: MediaQuery.of(context).padding,
       margin: const EdgeInsets.all(20),
-      color: Colors.redAccent,
-      child:!isLogin ?DrawerContents() : Column(
+      child:!isLogin ? const DrawerContents() : Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
@@ -75,10 +77,11 @@ class MenuDrawer extends StatelessWidget {
                 ),
               ),
 
-          )
-        ],
-      ),
-    );
+            )
+          ],
+        ),
+      );
+
   }
 }
 
