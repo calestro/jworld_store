@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_j_world/activy/main_page/components/drawer.dart';
+import 'package:mobile_j_world/activy/main_page/drawer/drawer.dart';
 import 'package:mobile_j_world/global_data.dart';
 
 

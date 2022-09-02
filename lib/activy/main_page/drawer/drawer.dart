@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:mobile_j_world/activy/main_page/drawer/drawer_contents.dart';
 import 'package:mobile_j_world/activy/main_page/main_page.dart';
 import 'package:mobile_j_world/activy/sign_signup/sign_signup_activy.dart';
 
@@ -33,11 +34,12 @@ class MenuDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isLogin = false;
     return Container(
       padding: MediaQuery.of(context).padding,
-      margin: const EdgeInsets.all(12),
+      margin: const EdgeInsets.all(20),
       color: Colors.redAccent,
-      child: Column(
+      child:!isLogin ?DrawerContents() : Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(

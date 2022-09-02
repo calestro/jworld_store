@@ -46,26 +46,25 @@ class _BuyButtonState extends State<BuyButton> {
             borderRadius: widget.isRadius ? const BorderRadius.all(Radius.circular(12)) : null,
           ),
           child: Padding(
-            padding: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left:isPressed ? 0 : 15),
             child: Stack(
               children:  [
-                Expanded(
-                  flex: 1,
-                    child: AnimatedAlign(
-                        duration: Duration(milliseconds: 500),
+                AnimatedAlign(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.fastOutSlowIn,
+                    alignment: isPressed ? Alignment.center : Alignment.centerLeft,
+                    child: AnimatedScale(
                         curve: Curves.fastOutSlowIn,
-                        alignment: isPressed ? Alignment.center : Alignment.centerLeft,
-                        child: AnimatedScale(
-                            curve: Curves.fastOutSlowIn,
-                          duration:Duration(milliseconds: 500),
-                            scale: isPressed ? 1.3 : 1,
-                            child: Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 25,)))),
-                isPressed ?
-                SizedBox()
-                    :
+                      duration:Duration(milliseconds: 500),
+                        scale: isPressed ? 1.3 : 1,
+                        child: Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 25,))),
                 Align(
                   alignment: Alignment.center,
-                    child: const Text("COMPRAR", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))
+                    child:AnimatedOpacity (
+                      duration: Duration(milliseconds: 400),
+                      opacity: isPressed ? 0 : 1,
+                        curve: Curves.fastOutSlowIn,
+                        child: const Text("COMPRAR", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)))
               ],
             ),
           ),
