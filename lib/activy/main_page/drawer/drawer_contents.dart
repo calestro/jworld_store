@@ -21,17 +21,18 @@ class DrawerContents extends StatelessWidget {
         GridView(
             gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 2,
-              crossAxisSpacing: 2,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
             ),
           shrinkWrap: true,
           children: [
-            ButtonDrawer(wd: 40, text: "Pedidos", navigatorWidget: Container(), iconData: Icons.check_box),
-            ButtonDrawer(wd: 40, text: "Endereços", navigatorWidget: Container(), iconData: Icons.check_box),
-            ButtonDrawer(wd: 40, text: "Pagamentos", navigatorWidget: Container(), iconData: Icons.check_box),
-            ButtonDrawer(wd: 40, text: "Configurações", navigatorWidget: Container(), iconData: Icons.check_box),
+            ButtonDrawer(wd: 60, text: "Pedidos", navigatorWidget: Container(), iconData: Icons.check_box),
+            ButtonDrawer(wd: 60, text: "Endereços", navigatorWidget: Container(), iconData: Icons.check_box),
+            ButtonDrawer(wd: 60, text: "Pagamentos", navigatorWidget: Container(), iconData: Icons.check_box),
+            ButtonDrawer(wd: 60, text: "Configurações", navigatorWidget: Container(), iconData: Icons.check_box),
           ],
         ),
+        SizedBox(height: 20),
 
         const Text("Sair")
       ],

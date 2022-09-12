@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../style.dart';
+
 class ButtonDrawer extends StatelessWidget {
   final double wd;
   final String text;
@@ -16,17 +18,21 @@ class ButtonDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: wd,
-      height: 40,
-      padding: const EdgeInsets.all(10),
-      color: Colors.white,
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(iconData),
-          Text(text),
-        ],
+      decoration: DrawerStyle.boxDrawerBack,
+      padding: EdgeInsets.all(2),
+      child: Container(
+        width: wd,
+        height: 40,
+        padding: const EdgeInsets.all(10),
+        decoration: DrawerStyle.boxDrawer,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(iconData),
+            Text(text),
+          ],
+        ),
       ),
     );
   }
